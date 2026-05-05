@@ -176,6 +176,124 @@
             background: var(--black);
         }
 
+        .start-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .start-btn.secondary {
+            background: var(--white);
+            color: var(--blue);
+            border: 2px solid var(--blue);
+        }
+
+        .start-btn.secondary:hover {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        /* Study Screen */
+        .study-screen {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .study-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .study-title h2 {
+            color: var(--blue);
+            font-size: 1.35rem;
+            margin-bottom: 4px;
+        }
+
+        .study-title p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .study-toolbar {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .study-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .study-card {
+            border: 2px solid var(--blue);
+            border-radius: var(--radius-sm);
+            padding: 18px;
+            background: var(--white);
+        }
+
+        .study-card.suggested {
+            border-color: var(--red);
+        }
+
+        .study-question {
+            margin: 10px 0 14px;
+            font-weight: 600;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .study-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .study-option {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            border: 1px solid var(--blue);
+            border-radius: 6px;
+            padding: 8px 10px;
+        }
+
+        .study-option.correct {
+            border-color: var(--green);
+            border-width: 2px;
+        }
+
+        .study-answer {
+            color: var(--green);
+            font-weight: 700;
+            margin-top: 8px;
+        }
+
+        .study-card:not(.answer-visible) .study-answer {
+            display: none;
+        }
+
+        .study-card:not(.answer-visible) .study-option.correct {
+            border-color: var(--blue);
+            border-width: 1px;
+        }
+
+        .study-toggle {
+            margin-top: 6px;
+        }
+
         /* Quiz Layout */
         .quiz-layout {
             display: flex;
@@ -621,6 +739,16 @@
             .result-actions {
                 flex-direction: column;
             }
+
+            .start-actions,
+            .study-toolbar {
+                flex-direction: column;
+            }
+
+            .start-actions .start-btn,
+            .study-toolbar .nav-btn {
+                width: 100%;
+            }
         }
 
         /* Hidden */
@@ -821,8 +949,28 @@
                 <button class="source-btn" data-source="original">Đề gốc</button>
                 <button class="source-btn" data-source="suggested">Bổ sung</button>
             </div>
-            <button class="start-btn" id="startBtn">Bắt đầu làm bài</button>
+            <div class="start-actions">
+                <button class="start-btn secondary" id="studyBtn">Học bộ đề</button>
+                <button class="start-btn" id="startBtn">Bắt đầu làm bài</button>
+            </div>
             <p class="disclaimer">Nội dung chỉ mang tính chất tham khảo. Đáp án được tự chọn để ôn tập; câu bổ sung được tạo từ phạm vi nội dung đã học và luôn có nhãn riêng trong lúc làm bài.</p>
+        </div>
+
+        <!-- Study Screen -->
+        <div id="studyScreen" class="hidden study-screen">
+            <div class="study-header">
+                <div class="study-title">
+                    <h2>Học Bộ Đề</h2>
+                    <p id="studySummary">126 câu hỏi • Đáp án đang ẩn</p>
+                </div>
+                <div class="study-toolbar">
+                    <button class="nav-btn" id="backToStartBtn">Quay lại</button>
+                    <button class="nav-btn" id="showAllStudyAnswersBtn">Hiện tất cả đáp án</button>
+                    <button class="nav-btn" id="hideAllStudyAnswersBtn">Ẩn tất cả đáp án</button>
+                    <button class="nav-btn primary" id="studyQuizBtn">Làm trắc nghiệm</button>
+                </div>
+            </div>
+            <div class="study-list" id="studyList"></div>
         </div>
 
         <!-- Quiz Screen -->
@@ -854,7 +1002,7 @@
         <div id="resultScreen" class="hidden result-screen">
             <div class="result-circle">
                 <div class="result-score" id="finalScore">0</div>
-                <div class="result-total" id="totalQuestions">/ 90 câu</div>
+                <div class="result-total" id="totalQuestions">/ 126 câu</div>
             </div>
             
             <div class="result-message" id="resultMessage">Kết quả của bạn</div>
@@ -894,7 +1042,7 @@
             <div class="donate-content">
                 <button class="donate-close" id="closeDonate">&times;</button>
                 <img src="donate-sticker.png" alt="Sticker" class="donate-sticker">
-                <h3 id="perfectTitle">Tuyệt vời! 90/90</h3>
+                <h3 id="perfectTitle">Tuyệt vời! 126/126</h3>
                 <p>Bạn đã hoàn thành xuất sắc!</p>
                 <p class="donate-text">Nếu thấy hữu ích, hãy ủng hộ tác giả một ly cà phê nhé!</p>
                 <img src="donate-qr.png" alt="QR Donate" class="donate-qr">
@@ -914,6 +1062,8 @@
                 this.answers = [];
                 this.reviewFilter = 'all';
                 this.activeSource = 'all';
+                this.studyQuestions = [];
+                this.studyVisibleAnswers = new Set();
                 
                 this.init();
             }
@@ -952,6 +1102,17 @@
             bindEvents() {
                 // Start button
                 document.getElementById('startBtn').addEventListener('click', () => this.startQuiz());
+                document.getElementById('studyBtn').addEventListener('click', () => this.openStudyMode());
+                document.getElementById('backToStartBtn').addEventListener('click', () => this.showStartScreen());
+                document.getElementById('showAllStudyAnswersBtn').addEventListener('click', () => this.setAllStudyAnswers(true));
+                document.getElementById('hideAllStudyAnswersBtn').addEventListener('click', () => this.setAllStudyAnswers(false));
+                document.getElementById('studyQuizBtn').addEventListener('click', () => this.startQuiz());
+
+                document.getElementById('studyList').addEventListener('click', (e) => {
+                    const button = e.target.closest('.study-toggle');
+                    if (!button) return;
+                    this.toggleStudyAnswer(Number(button.dataset.index));
+                });
 
                 // Source filter on start screen
                 document.querySelectorAll('.source-btn').forEach(btn => {
@@ -1010,10 +1171,132 @@
                 });
             }
 
-            startQuiz() {
-                const selectedQuestions = this.activeSource === 'all'
+            getSelectedQuestions() {
+                return this.activeSource === 'all'
                     ? this.questions
                     : this.questions.filter(question => question.source === this.activeSource);
+            }
+
+            getSourceLabel() {
+                if (this.activeSource === 'original') return 'Đề gốc';
+                if (this.activeSource === 'suggested') return 'Bổ sung';
+                return 'Tất cả';
+            }
+
+            hideAllScreens() {
+                document.getElementById('startScreen').classList.add('hidden');
+                document.getElementById('studyScreen').classList.add('hidden');
+                document.getElementById('quizScreen').classList.add('hidden');
+                document.getElementById('resultScreen').classList.add('hidden');
+            }
+
+            showStartScreen() {
+                this.hideAllScreens();
+                document.getElementById('startScreen').classList.remove('hidden');
+            }
+
+            openStudyMode() {
+                this.studyQuestions = [...this.getSelectedQuestions()].sort((a, b) => a.id - b.id);
+                this.studyVisibleAnswers = new Set();
+                this.renderStudyList();
+                this.hideAllScreens();
+                document.getElementById('studyScreen').classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            updateStudySummary() {
+                const visible = this.studyVisibleAnswers.size;
+                const total = this.studyQuestions.length;
+                const answerState = visible === 0
+                    ? 'Đáp án đang ẩn'
+                    : visible === total
+                        ? 'Đã hiện toàn bộ đáp án'
+                        : `Đã hiện ${visible}/${total} đáp án`;
+                document.getElementById('studySummary').textContent = `${total} câu hỏi • ${this.getSourceLabel()} • ${answerState}`;
+            }
+
+            renderStudyList() {
+                const studyList = document.getElementById('studyList');
+                studyList.innerHTML = '';
+
+                this.studyQuestions.forEach((question, index) => {
+                    const card = document.createElement('div');
+                    const isVisible = this.studyVisibleAnswers.has(index);
+                    const sourceClass = question.source === 'suggested' ? 'suggested' : 'original';
+                    const sourceLabel = question.sourceLabel || 'Đề ôn tập gốc';
+
+                    card.className = `study-card ${sourceClass} ${isVisible ? 'answer-visible' : ''}`;
+
+                    const meta = document.createElement('div');
+                    meta.className = 'question-meta';
+
+                    const number = document.createElement('span');
+                    number.className = 'question-number';
+                    number.textContent = `Câu ${question.id}`;
+
+                    const badge = document.createElement('span');
+                    badge.className = `source-badge ${sourceClass}`;
+                    badge.textContent = sourceLabel;
+
+                    meta.append(number, badge);
+
+                    const questionText = document.createElement('div');
+                    questionText.className = 'study-question';
+                    questionText.textContent = question.question;
+
+                    const options = document.createElement('div');
+                    options.className = 'study-options';
+
+                    Object.entries(question.options).forEach(([key, value]) => {
+                        const option = document.createElement('div');
+                        option.className = `study-option ${key === question.answer ? 'correct' : ''}`;
+
+                        const optionKey = document.createElement('span');
+                        optionKey.className = 'option-key';
+                        optionKey.textContent = key;
+
+                        const optionText = document.createElement('span');
+                        optionText.className = 'option-text';
+                        optionText.textContent = value;
+
+                        option.append(optionKey, optionText);
+                        options.appendChild(option);
+                    });
+
+                    const answer = document.createElement('div');
+                    answer.className = 'study-answer';
+                    answer.textContent = `Đáp án: ${question.answer} - ${question.options[question.answer]}`;
+
+                    const toggle = document.createElement('button');
+                    toggle.className = 'nav-btn study-toggle';
+                    toggle.dataset.index = index;
+                    toggle.textContent = isVisible ? 'Ẩn đáp án' : 'Hiện đáp án';
+
+                    card.append(meta, questionText, options, answer, toggle);
+                    studyList.appendChild(card);
+                });
+
+                this.updateStudySummary();
+            }
+
+            toggleStudyAnswer(index) {
+                if (this.studyVisibleAnswers.has(index)) {
+                    this.studyVisibleAnswers.delete(index);
+                } else {
+                    this.studyVisibleAnswers.add(index);
+                }
+                this.renderStudyList();
+            }
+
+            setAllStudyAnswers(show) {
+                this.studyVisibleAnswers = show
+                    ? new Set(this.studyQuestions.map((_, index) => index))
+                    : new Set();
+                this.renderStudyList();
+            }
+
+            startQuiz() {
+                const selectedQuestions = this.getSelectedQuestions();
 
                 this.currentQuestions = this.shuffleArray([...selectedQuestions]);
 
@@ -1022,6 +1305,7 @@
                 this.answers = new Array(this.currentQuestions.length).fill(null);
 
                 document.getElementById('startScreen').classList.add('hidden');
+                document.getElementById('studyScreen').classList.add('hidden');
                 document.getElementById('quizScreen').classList.remove('hidden');
                 document.getElementById('resultScreen').classList.add('hidden');
 
@@ -1252,8 +1536,7 @@
             }
 
             restart() {
-                document.getElementById('resultScreen').classList.add('hidden');
-                document.getElementById('startScreen').classList.remove('hidden');
+                this.showStartScreen();
                 this.reviewFilter = 'all';
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
