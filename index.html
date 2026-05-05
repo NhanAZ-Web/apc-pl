@@ -458,6 +458,19 @@
             min-width: 0;
         }
 
+        .quiz-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: flex-end;
+            margin-bottom: 12px;
+        }
+
+        .quiz-actions .nav-btn {
+            padding: 10px 14px;
+            font-size: 0.88rem;
+        }
+
         .quiz-sidebar {
             width: 260px;
             flex-shrink: 0;
@@ -736,6 +749,17 @@
             border-color: var(--black);
         }
 
+        .nav-btn.danger {
+            background: var(--red);
+            border-color: var(--red);
+            color: var(--white);
+        }
+
+        .nav-btn.danger:hover:not(:disabled) {
+            background: var(--black);
+            border-color: var(--black);
+        }
+
         /* Result Screen */
         .result-screen {
             text-align: center;
@@ -884,12 +908,14 @@
             }
 
             .start-actions,
-            .study-toolbar {
+            .study-toolbar,
+            .quiz-actions {
                 flex-direction: column;
             }
 
             .start-actions .start-btn,
-            .study-toolbar .nav-btn {
+            .study-toolbar .nav-btn,
+            .quiz-actions .nav-btn {
                 width: 100%;
             }
 
@@ -1140,6 +1166,7 @@
             <div class="start-actions">
                 <button class="start-btn secondary" id="conceptBtn">Khái niệm quan trọng</button>
                 <button class="start-btn secondary" id="studyBtn">Học bộ đề</button>
+                <button class="start-btn secondary hidden" id="resumeQuizBtn">Tiếp tục bài đang làm</button>
                 <button class="start-btn" id="startBtn">Bắt đầu làm bài</button>
             </div>
             <p class="disclaimer">Nội dung chỉ mang tính chất tham khảo. Đáp án được tự chọn để phục vụ ôn tập; người học nên đối chiếu thêm với tài liệu học phần khi cần.</p>
@@ -1190,6 +1217,12 @@
         <div id="quizScreen" class="hidden">
             <div class="quiz-layout">
                 <div class="quiz-main">
+                    <div class="quiz-actions">
+                        <button class="nav-btn" id="quizHomeBtn">Trang chủ</button>
+                        <button class="nav-btn" id="quizConceptBtn">Khái niệm</button>
+                        <button class="nav-btn" id="quizResetBtn">Làm lại từ đầu</button>
+                        <button class="nav-btn primary" id="earlySubmitBtn">Nộp bài sớm</button>
+                    </div>
                     <div class="question-card" id="questionCard">
                         <div class="question-meta">
                             <span class="question-number" id="questionNumber">Câu 1</span>
@@ -1809,6 +1842,10 @@
                 this.conceptSections = CONCEPT_SECTIONS;
                 this.activeConceptSection = 'all';
                 this.conceptSearch = '';
+                this.quizStarted = false;
+                this.quizSubmitted = false;
+                this.resetArmed = false;
+                this.resetConfirmTimer = null;
                 
                 this.init();
             }
@@ -1847,10 +1884,15 @@
                 document.getElementById('startBtn').addEventListener('click', () => this.startQuiz());
                 document.getElementById('conceptBtn').addEventListener('click', () => this.openConceptMode());
                 document.getElementById('studyBtn').addEventListener('click', () => this.openStudyMode());
+                document.getElementById('resumeQuizBtn').addEventListener('click', () => this.resumeQuiz());
                 document.getElementById('backToStartBtn').addEventListener('click', () => this.showStartScreen());
-                document.getElementById('studyQuizBtn').addEventListener('click', () => this.startQuiz());
+                document.getElementById('studyQuizBtn').addEventListener('click', () => this.startOrResumeQuiz());
                 document.getElementById('backFromConceptBtn').addEventListener('click', () => this.showStartScreen());
-                document.getElementById('conceptQuizBtn').addEventListener('click', () => this.startQuiz());
+                document.getElementById('conceptQuizBtn').addEventListener('click', () => this.startOrResumeQuiz());
+                document.getElementById('quizHomeBtn').addEventListener('click', () => this.showStartScreen());
+                document.getElementById('quizConceptBtn').addEventListener('click', () => this.openConceptMode());
+                document.getElementById('quizResetBtn').addEventListener('click', () => this.resetCurrentQuiz());
+                document.getElementById('earlySubmitBtn').addEventListener('click', () => this.showResult());
                 document.getElementById('conceptSearch').addEventListener('input', (e) => {
                     this.conceptSearch = e.target.value;
                     this.renderConcepts();
@@ -1939,23 +1981,45 @@
                 document.getElementById('resultScreen').classList.add('hidden');
             }
 
+            hasActiveQuiz() {
+                return this.quizStarted && !this.quizSubmitted && this.currentQuestions.length > 0;
+            }
+
+            updateResumeButton() {
+                const hasActive = this.hasActiveQuiz();
+                document.getElementById('resumeQuizBtn').classList.toggle('hidden', !hasActive);
+                document.getElementById('startBtn').textContent = hasActive ? 'Bắt đầu bài mới' : 'Bắt đầu làm bài';
+            }
+
+            updateStudyAndConceptActions() {
+                const label = this.hasActiveQuiz() ? 'Tiếp tục làm bài' : 'Làm trắc nghiệm';
+                document.getElementById('studyQuizBtn').textContent = label;
+                document.getElementById('conceptQuizBtn').textContent = label;
+            }
+
             showStartScreen() {
+                this.clearResetConfirm();
                 this.hideAllScreens();
+                this.updateResumeButton();
                 document.getElementById('startScreen').classList.remove('hidden');
             }
 
             openStudyMode() {
+                this.clearResetConfirm();
                 this.studyQuestions = [...this.getSelectedQuestions()].sort((a, b) => a.id - b.id);
                 this.renderStudyList();
                 this.renderStudyGrid();
+                this.updateStudyAndConceptActions();
                 this.hideAllScreens();
                 document.getElementById('studyScreen').classList.remove('hidden');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
             openConceptMode() {
+                this.clearResetConfirm();
                 this.renderConceptTabs();
                 this.renderConcepts();
+                this.updateStudyAndConceptActions();
                 this.hideAllScreens();
                 document.getElementById('conceptScreen').classList.remove('hidden');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2190,6 +2254,68 @@
                 this.renderStudyGrid();
             }
 
+            startOrResumeQuiz() {
+                if (this.hasActiveQuiz()) {
+                    this.resumeQuiz();
+                    return;
+                }
+
+                this.startQuiz();
+            }
+
+            resumeQuiz() {
+                if (!this.hasActiveQuiz()) return;
+
+                this.clearResetConfirm();
+                this.hideAllScreens();
+                document.getElementById('quizScreen').classList.remove('hidden');
+                this.displayQuestion();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            armResetConfirm() {
+                const button = document.getElementById('quizResetBtn');
+                this.resetArmed = true;
+                button.classList.add('danger');
+                button.textContent = 'Bấm lại để xác nhận';
+
+                clearTimeout(this.resetConfirmTimer);
+                this.resetConfirmTimer = setTimeout(() => this.clearResetConfirm(), 3500);
+            }
+
+            clearResetConfirm() {
+                const button = document.getElementById('quizResetBtn');
+                this.resetArmed = false;
+                clearTimeout(this.resetConfirmTimer);
+                this.resetConfirmTimer = null;
+                button.classList.remove('danger');
+                button.textContent = 'Làm lại từ đầu';
+            }
+
+            resetCurrentQuiz() {
+                if (!this.currentQuestions.length) {
+                    this.startQuiz();
+                    return;
+                }
+
+                if (!this.resetArmed) {
+                    this.armResetConfirm();
+                    return;
+                }
+
+                this.clearResetConfirm();
+                this.currentIndex = 0;
+                this.score = 0;
+                this.answers = new Array(this.currentQuestions.length).fill(null);
+                this.quizStarted = true;
+                this.quizSubmitted = false;
+
+                this.hideAllScreens();
+                document.getElementById('quizScreen').classList.remove('hidden');
+                this.displayQuestion();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
             startQuiz() {
                 const selectedQuestions = this.getSelectedQuestions();
 
@@ -2203,11 +2329,16 @@
                 this.currentIndex = 0;
                 this.score = 0;
                 this.answers = new Array(this.currentQuestions.length).fill(null);
+                this.quizStarted = true;
+                this.quizSubmitted = false;
+                this.reviewFilter = 'all';
+                this.clearResetConfirm();
 
-                document.getElementById('startScreen').classList.add('hidden');
-                document.getElementById('studyScreen').classList.add('hidden');
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+
+                this.hideAllScreens();
                 document.getElementById('quizScreen').classList.remove('hidden');
-                document.getElementById('resultScreen').classList.add('hidden');
 
                 this.displayQuestion();
             }
@@ -2329,6 +2460,10 @@
             }
 
             showResult() {
+                if (!this.currentQuestions.length) return;
+
+                this.clearResetConfirm();
+                this.quizSubmitted = true;
                 document.getElementById('quizScreen').classList.add('hidden');
                 document.getElementById('resultScreen').classList.remove('hidden');
 
