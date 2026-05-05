@@ -2167,7 +2167,12 @@
             startQuiz() {
                 const selectedQuestions = this.getSelectedQuestions();
 
-                this.currentQuestions = this.shuffleArray([...selectedQuestions]);
+                const originalQuestions = selectedQuestions.filter(question => question.source !== 'suggested');
+                const suggestedQuestions = selectedQuestions.filter(question => question.source === 'suggested');
+                this.currentQuestions = [
+                    ...this.shuffleArray([...originalQuestions]),
+                    ...this.shuffleArray([...suggestedQuestions])
+                ];
 
                 this.currentIndex = 0;
                 this.score = 0;
