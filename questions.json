@@ -4,8 +4,8 @@
   "notes": "Đáp án được chọn để phục vụ ôn tập; câu bổ sung được tạo từ phạm vi nội dung đã học trong pl-dh.txt.",
   "summary": {
     "original": 74,
-    "suggested": 16,
-    "total": 90
+    "suggested": 52,
+    "total": 126
   },
   "questions": [
     {
@@ -1185,6 +1185,510 @@
         "B": "Cố tình cung cấp thông tin sai lệch khi mua hàng",
         "C": "Sử dụng hàng hóa trái quy định để yêu cầu bồi thường",
         "D": "Tự ý phá hủy chứng từ giao dịch rồi yêu cầu doanh nghiệp hoàn tiền"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 91,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Nhà nước và pháp luật",
+      "question": "Bản chất của Nhà nước Cộng hòa xã hội chủ nghĩa Việt Nam được thể hiện ở nội dung nào sau đây?",
+      "options": {
+        "A": "Nhà nước của Nhân dân, do Nhân dân, vì Nhân dân",
+        "B": "Nhà nước chỉ đại diện cho một nhóm nghề nghiệp nhất định",
+        "C": "Nhà nước hoạt động không cần pháp luật",
+        "D": "Nhà nước tách rời quyền làm chủ của Nhân dân"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 92,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Nhà nước và pháp luật",
+      "question": "Nguyên tắc tổ chức và hoạt động của bộ máy nhà nước Việt Nam là:",
+      "options": {
+        "A": "Quyền lực nhà nước thuộc về Nhân dân",
+        "B": "Cơ quan nhà nước hoạt động ngoài khuôn khổ Hiến pháp và pháp luật",
+        "C": "Mỗi cơ quan nhà nước tự đặt ra luật riêng có hiệu lực cao hơn Hiến pháp",
+        "D": "Quyền lực nhà nước không cần sự phân công, phối hợp, kiểm soát"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 93,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Bộ máy nhà nước",
+      "question": "Cơ quan nào sau đây thuộc bộ máy Nhà nước Cộng hòa xã hội chủ nghĩa Việt Nam?",
+      "options": {
+        "A": "Quốc hội",
+        "B": "Chính phủ",
+        "C": "Tòa án nhân dân",
+        "D": "Tất cả các phương án đều đúng"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 94,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Văn bản quy phạm pháp luật",
+      "question": "Văn bản quy phạm pháp luật do Chính phủ ban hành thường là:",
+      "options": {
+        "A": "Nghị định",
+        "B": "Bản án",
+        "C": "Hợp đồng dân sự",
+        "D": "Biên bản giao nhận hàng hóa"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 95,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Văn bản quy phạm pháp luật",
+      "question": "Văn bản quy phạm pháp luật do Hội đồng nhân dân ban hành thường là:",
+      "options": {
+        "A": "Nghị quyết",
+        "B": "Nghị định",
+        "C": "Lệnh",
+        "D": "Thông tư"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 96,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Hiến pháp",
+      "question": "Hiến pháp có vị trí như thế nào trong hệ thống pháp luật Việt Nam?",
+      "options": {
+        "A": "Là luật cơ bản của Nhà nước, có hiệu lực pháp lý cao nhất",
+        "B": "Là văn bản chỉ áp dụng cho quan hệ lao động",
+        "C": "Là văn bản có hiệu lực thấp hơn thông tư",
+        "D": "Là thỏa thuận dân sự giữa các cá nhân"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 97,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Hiến pháp",
+      "question": "Theo Hiến pháp năm 2013, Quốc hội là:",
+      "options": {
+        "A": "Cơ quan đại biểu cao nhất của Nhân dân, cơ quan quyền lực nhà nước cao nhất",
+        "B": "Cơ quan xét xử cao nhất",
+        "C": "Cơ quan điều tra trung ương",
+        "D": "Cơ quan hành chính nhà nước ở địa phương"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 98,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Hiến pháp",
+      "question": "Theo Hiến pháp năm 2013, Chính phủ là:",
+      "options": {
+        "A": "Cơ quan hành chính nhà nước cao nhất của nước Cộng hòa xã hội chủ nghĩa Việt Nam",
+        "B": "Cơ quan xét xử của nước Cộng hòa xã hội chủ nghĩa Việt Nam",
+        "C": "Cơ quan kiểm sát hoạt động tư pháp duy nhất ở địa phương",
+        "D": "Cơ quan ban hành Hiến pháp"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 99,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Hiến pháp",
+      "question": "Theo Hiến pháp năm 2013, Viện kiểm sát nhân dân thực hiện chức năng nào sau đây?",
+      "options": {
+        "A": "Thực hành quyền công tố và kiểm sát hoạt động tư pháp",
+        "B": "Ban hành Hiến pháp",
+        "C": "Tổ chức thi hành án dân sự trong mọi trường hợp",
+        "D": "Quản lý hoạt động kinh doanh của doanh nghiệp tư nhân"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 100,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Quyền công dân",
+      "question": "Theo Hiến pháp năm 2013, công dân Việt Nam đủ bao nhiêu tuổi trở lên có quyền bầu cử?",
+      "options": {
+        "A": "Đủ 16 tuổi",
+        "B": "Đủ 18 tuổi",
+        "C": "Đủ 20 tuổi",
+        "D": "Đủ 21 tuổi"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 101,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Quyền công dân",
+      "question": "Theo Hiến pháp năm 2013, công dân Việt Nam đủ bao nhiêu tuổi trở lên có quyền ứng cử vào Quốc hội, Hội đồng nhân dân?",
+      "options": {
+        "A": "Đủ 18 tuổi",
+        "B": "Đủ 19 tuổi",
+        "C": "Đủ 21 tuổi",
+        "D": "Đủ 25 tuổi"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 102,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Luật dân sự",
+      "question": "Nội dung của quyền sở hữu bao gồm:",
+      "options": {
+        "A": "Quyền chiếm hữu, quyền sử dụng và quyền định đoạt",
+        "B": "Quyền bắt giữ, quyền điều tra và quyền xét xử",
+        "C": "Quyền xử phạt, quyền truy tố và quyền giam giữ",
+        "D": "Quyền tuyển dụng, quyền kỷ luật và quyền sa thải"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 103,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Luật dân sự",
+      "question": "Quyền định đoạt tài sản là quyền:",
+      "options": {
+        "A": "Chuyển giao quyền sở hữu, từ bỏ quyền sở hữu, tiêu dùng hoặc tiêu hủy tài sản theo quy định",
+        "B": "Chỉ được nhìn thấy tài sản nhưng không được quyết định gì về tài sản",
+        "C": "Chỉ được yêu cầu cơ quan hành chính xử phạt người khác",
+        "D": "Chỉ phát sinh trong quan hệ lao động"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 104,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Hợp đồng dân sự",
+      "question": "Hợp đồng dân sự là:",
+      "options": {
+        "A": "Sự thỏa thuận giữa các bên về việc xác lập, thay đổi hoặc chấm dứt quyền, nghĩa vụ dân sự",
+        "B": "Một quyết định xử phạt vi phạm hành chính",
+        "C": "Một bản án hình sự đã có hiệu lực",
+        "D": "Một mệnh lệnh đơn phương của người sử dụng lao động"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 105,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Bồi thường thiệt hại ngoài hợp đồng",
+      "question": "Căn cứ thường gặp để phát sinh trách nhiệm bồi thường thiệt hại ngoài hợp đồng là:",
+      "options": {
+        "A": "Có thiệt hại thực tế xảy ra",
+        "B": "Có hành vi trái pháp luật gây thiệt hại",
+        "C": "Có mối quan hệ nhân quả giữa hành vi và thiệt hại",
+        "D": "Tất cả các phương án đều đúng"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 106,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Luật lao động",
+      "question": "Người lao động có quyền nào sau đây?",
+      "options": {
+        "A": "Làm việc, tự do lựa chọn việc làm, nơi làm việc và nghề nghiệp phù hợp",
+        "B": "Tự ý không thực hiện hợp đồng lao động trong mọi trường hợp mà không cần báo trước",
+        "C": "Tự đặt ra nội quy lao động thay cho người sử dụng lao động",
+        "D": "Tự ý xử phạt vi phạm hành chính người sử dụng lao động"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 107,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Luật lao động",
+      "question": "Người sử dụng lao động có quyền nào sau đây?",
+      "options": {
+        "A": "Tuyển dụng, bố trí, quản lý, điều hành và giám sát lao động theo quy định",
+        "B": "Giữ bản chính giấy tờ tùy thân của người lao động trong mọi trường hợp",
+        "C": "Không trả lương khi người lao động đã làm việc theo hợp đồng",
+        "D": "Phạt tiền người lao động thay cho kỷ luật lao động"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 108,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Hợp đồng lao động",
+      "question": "Theo Bộ luật Lao động hiện hành, hợp đồng lao động gồm các loại chủ yếu nào?",
+      "options": {
+        "A": "Hợp đồng lao động không xác định thời hạn và hợp đồng lao động xác định thời hạn",
+        "B": "Hợp đồng miệng vĩnh viễn và hợp đồng thử việc trọn đời",
+        "C": "Hợp đồng dân sự và hợp đồng hình sự",
+        "D": "Hợp đồng hành chính và hợp đồng tố tụng"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 109,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Hợp đồng lao động",
+      "question": "Thời hạn của hợp đồng lao động xác định thời hạn theo Bộ luật Lao động hiện hành là:",
+      "options": {
+        "A": "Không quá 12 tháng",
+        "B": "Không quá 24 tháng",
+        "C": "Không quá 36 tháng",
+        "D": "Không quá 60 tháng"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 110,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Tiền lương",
+      "question": "Người lao động làm thêm giờ vào ngày nghỉ hằng tuần được trả ít nhất bằng:",
+      "options": {
+        "A": "100% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường",
+        "B": "150% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường",
+        "C": "200% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường",
+        "D": "300% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 111,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Tiền lương",
+      "question": "Người lao động làm việc vào ban đêm được trả thêm ít nhất bằng bao nhiêu phần trăm tiền lương tính theo đơn giá tiền lương hoặc tiền lương thực trả theo công việc của ngày làm việc bình thường?",
+      "options": {
+        "A": "20%",
+        "B": "30%",
+        "C": "50%",
+        "D": "100%"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 112,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Thời gian làm việc, nghỉ ngơi",
+      "question": "Thời giờ làm việc bình thường theo Bộ luật Lao động hiện hành không quá:",
+      "options": {
+        "A": "08 giờ trong 01 ngày và 48 giờ trong 01 tuần",
+        "B": "10 giờ trong 01 ngày và 60 giờ trong 01 tuần",
+        "C": "12 giờ trong 01 ngày và 72 giờ trong 01 tuần",
+        "D": "06 giờ trong 01 ngày và 30 giờ trong 01 tuần"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 113,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Thời gian làm việc, nghỉ ngơi",
+      "question": "Mỗi tuần, người lao động được nghỉ ít nhất:",
+      "options": {
+        "A": "12 giờ liên tục",
+        "B": "18 giờ liên tục",
+        "C": "24 giờ liên tục",
+        "D": "48 giờ liên tục trong mọi trường hợp"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 114,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Kỷ luật lao động",
+      "question": "Hành vi nào sau đây không được dùng để xử lý kỷ luật lao động?",
+      "options": {
+        "A": "Khiển trách",
+        "B": "Kéo dài thời hạn nâng lương không quá 06 tháng",
+        "C": "Cách chức",
+        "D": "Phạt tiền, cắt lương thay việc xử lý kỷ luật lao động"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 115,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Tranh chấp lao động",
+      "question": "Tranh chấp lao động là tranh chấp về:",
+      "options": {
+        "A": "Quyền, nghĩa vụ và lợi ích phát sinh giữa các bên trong quan hệ lao động",
+        "B": "Việc truy cứu trách nhiệm hình sự đối với mọi công dân",
+        "C": "Việc ban hành Hiến pháp",
+        "D": "Việc cấp giấy chứng nhận quyền sử dụng đất trong mọi trường hợp"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 116,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Công đoàn",
+      "question": "Vai trò cơ bản của công đoàn trong quan hệ lao động là:",
+      "options": {
+        "A": "Đại diện, chăm lo và bảo vệ quyền, lợi ích hợp pháp, chính đáng của người lao động",
+        "B": "Thay Tòa án xét xử các vụ án hình sự",
+        "C": "Thay Chính phủ ban hành nghị định",
+        "D": "Thay Viện kiểm sát thực hành quyền công tố"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 117,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Luật hành chính",
+      "question": "Đối tượng điều chỉnh chủ yếu của luật hành chính là:",
+      "options": {
+        "A": "Các quan hệ xã hội phát sinh trong hoạt động quản lý hành chính nhà nước",
+        "B": "Các quan hệ mua bán tài sản thuần túy giữa cá nhân với cá nhân",
+        "C": "Các quan hệ phát sinh khi xét xử tội phạm",
+        "D": "Các quan hệ thừa kế tài sản trong gia đình"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 118,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Xử lý vi phạm hành chính",
+      "question": "Dấu hiệu nào sau đây là dấu hiệu của vi phạm hành chính?",
+      "options": {
+        "A": "Là hành vi trái pháp luật, có lỗi, xâm phạm trật tự quản lý nhà nước và theo luật phải bị xử phạt hành chính",
+        "B": "Luôn là tội phạm đặc biệt nghiêm trọng",
+        "C": "Luôn là tranh chấp hợp đồng dân sự",
+        "D": "Luôn là hành vi không có lỗi"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 119,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Xử lý vi phạm hành chính",
+      "question": "Hình thức xử phạt vi phạm hành chính nào sau đây là hình thức xử phạt?",
+      "options": {
+        "A": "Cảnh cáo",
+        "B": "Phạt tiền",
+        "C": "Tước quyền sử dụng giấy phép, chứng chỉ hành nghề có thời hạn",
+        "D": "Tất cả các phương án đều đúng"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 120,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Luật hình sự",
+      "question": "Cấu thành tội phạm thường được phân tích theo các yếu tố nào?",
+      "options": {
+        "A": "Khách thể, mặt khách quan, chủ thể và mặt chủ quan của tội phạm",
+        "B": "Chỉ có hành vi và hậu quả",
+        "C": "Chỉ có động cơ và mục đích",
+        "D": "Chỉ có nơi cư trú của người phạm tội"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 121,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Luật hình sự",
+      "question": "Theo tính chất và mức độ nguy hiểm cho xã hội, tội phạm được phân loại thành:",
+      "options": {
+        "A": "Tội phạm ít nghiêm trọng, nghiêm trọng, rất nghiêm trọng và đặc biệt nghiêm trọng",
+        "B": "Tội phạm dân sự và tội phạm lao động",
+        "C": "Tội phạm hành chính và tội phạm hợp đồng",
+        "D": "Tội phạm nhẹ, vừa và tùy ý"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 122,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Luật hình sự",
+      "question": "Lỗi vô ý do cẩu thả là trường hợp người phạm tội:",
+      "options": {
+        "A": "Không thấy trước hậu quả nguy hại cho xã hội mặc dù phải thấy trước và có thể thấy trước hậu quả đó",
+        "B": "Thấy trước hậu quả và mong muốn hậu quả xảy ra",
+        "C": "Thấy trước hậu quả và bỏ mặc cho hậu quả xảy ra",
+        "D": "Không thực hiện bất kỳ hành vi nào"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 123,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Phòng, chống tham nhũng",
+      "question": "Hành vi nào sau đây là hành vi tham nhũng trong khu vực nhà nước?",
+      "options": {
+        "A": "Tham ô tài sản",
+        "B": "Nhận hối lộ",
+        "C": "Lạm dụng chức vụ, quyền hạn chiếm đoạt tài sản",
+        "D": "Tất cả các phương án đều đúng"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 124,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Phòng, chống tham nhũng",
+      "question": "Ý nghĩa của công tác phòng, chống tham nhũng là:",
+      "options": {
+        "A": "Góp phần bảo vệ tài sản, nâng cao hiệu quả quản lý và củng cố niềm tin của Nhân dân",
+        "B": "Làm giảm tính minh bạch trong hoạt động công vụ",
+        "C": "Khuyến khích lợi dụng chức vụ, quyền hạn vì vụ lợi",
+        "D": "Loại bỏ trách nhiệm giải trình của cơ quan, tổ chức"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 125,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Bảo vệ quyền lợi người tiêu dùng",
+      "question": "Tổ chức, cá nhân kinh doanh hàng hóa, dịch vụ có trách nhiệm nào sau đây đối với người tiêu dùng?",
+      "options": {
+        "A": "Cung cấp thông tin chính xác, đầy đủ về hàng hóa, dịch vụ",
+        "B": "Che giấu mọi khuyết tật của hàng hóa",
+        "C": "Từ chối cung cấp bằng chứng giao dịch trong mọi trường hợp",
+        "D": "Ép buộc người tiêu dùng mua hàng hóa không có nhu cầu"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 126,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Bảo vệ quyền lợi người tiêu dùng",
+      "question": "Khi phát hiện hàng hóa có khuyết tật có khả năng gây thiệt hại cho người tiêu dùng, tổ chức, cá nhân kinh doanh cần:",
+      "options": {
+        "A": "Thu hồi hàng hóa có khuyết tật theo quy định",
+        "B": "Tiếp tục bán hàng hóa và không thông báo cho ai",
+        "C": "Xóa thông tin cảnh báo về sản phẩm",
+        "D": "Chuyển toàn bộ trách nhiệm cho người tiêu dùng trong mọi trường hợp"
       },
       "answer": "A"
     }
