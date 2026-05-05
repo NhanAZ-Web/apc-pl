@@ -998,6 +998,32 @@
             color: var(--red) !important;
         }
 
+        .review-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .review-option {
+            cursor: default;
+        }
+
+        .review-note {
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-left: 8px;
+            color: var(--blue);
+        }
+
+        .review-option.correct .review-note {
+            color: var(--green);
+        }
+
+        .review-option.wrong .review-note {
+            color: var(--red);
+        }
+
         /* Filter tabs for review */
         .filter-tabs {
             display: flex;
@@ -2379,19 +2405,70 @@
                     const card = document.createElement('div');
                     card.className = `review-card ${isCorrect ? 'is-correct' : 'incorrect'}`;
 
-                    card.innerHTML = `
-                        <div class="review-header">
-                            <span class="question-number">Câu ${question.id}</span>
-                            <span class="review-status ${isCorrect ? 'correct' : 'wrong'}">
-                                ${isCorrect ? '✓ Đúng' : '✗ Sai'}
-                            </span>
-                        </div>
-                        <div class="review-question">${question.question}</div>
-                        <div class="review-answer">
-                            ${!isCorrect ? `<div style="margin-bottom: 4px">Bạn chọn: <span class="your-answer">${userAnswer || 'Chưa trả lời'}${userAnswer ? ' - ' + question.options[userAnswer] : ''}</span></div>` : ''}
-                            <div>Đáp án đúng: <span>${question.answer} - ${question.options[question.answer]}</span></div>
-                        </div>
-                    `;
+                    const header = document.createElement('div');
+                    header.className = 'review-header';
+
+                    const number = document.createElement('span');
+                    number.className = 'question-number';
+                    number.textContent = `Câu ${question.id}`;
+
+                    const status = document.createElement('span');
+                    status.className = `review-status ${isCorrect ? 'correct' : 'wrong'}`;
+                    status.textContent = isCorrect ? '✓ Đúng' : '✗ Sai';
+
+                    header.append(number, status);
+
+                    const questionText = document.createElement('div');
+                    questionText.className = 'review-question';
+                    questionText.textContent = question.question;
+
+                    const options = document.createElement('div');
+                    options.className = 'review-options';
+
+                    Object.entries(question.options).forEach(([key, value]) => {
+                        const option = document.createElement('div');
+                        option.className = 'option review-option disabled';
+
+                        if (key === question.answer) {
+                            option.classList.add('correct');
+                        }
+
+                        if (key === userAnswer && key !== question.answer) {
+                            option.classList.add('wrong');
+                        }
+
+                        const optionKey = document.createElement('span');
+                        optionKey.className = 'option-key';
+                        optionKey.textContent = key;
+
+                        const optionText = document.createElement('span');
+                        optionText.className = 'option-text';
+                        optionText.textContent = value;
+
+                        option.append(optionKey, optionText);
+
+                        if (key === question.answer || key === userAnswer) {
+                            const note = document.createElement('span');
+                            note.className = 'review-note';
+                            note.textContent = key === question.answer && key === userAnswer
+                                ? 'Bạn chọn đúng'
+                                : key === question.answer
+                                    ? 'Đáp án đúng'
+                                    : 'Bạn chọn';
+                            option.appendChild(note);
+                        }
+
+                        options.appendChild(option);
+                    });
+
+                    if (!userAnswer) {
+                        const skipped = document.createElement('div');
+                        skipped.className = 'review-answer';
+                        skipped.textContent = 'Bạn chưa trả lời câu này.';
+                        card.append(header, questionText, skipped, options);
+                    } else {
+                        card.append(header, questionText, options);
+                    }
 
                     reviewList.appendChild(card);
                 });
