@@ -1,0 +1,1192 @@
+{
+  "title": "Câu hỏi ôn tập - Pháp luật",
+  "source": "Cao Đẳng Việt Mỹ - Pháp luật (CĐ)-APC HCM (T3/2026)",
+  "notes": "Đáp án được chọn để phục vụ ôn tập; câu bổ sung được tạo từ phạm vi nội dung đã học trong pl-dh.txt.",
+  "summary": {
+    "original": 74,
+    "suggested": 16,
+    "total": 90
+  },
+  "questions": [
+    {
+      "id": 1,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Trong bộ máy Nhà nước Cộng hòa xã hội chủ nghĩa Việt Nam, Quốc hội và Hội đồng nhân dân các cấp là:",
+      "options": {
+        "A": "Cơ quan quyền lực nhà nước",
+        "B": "Cơ quan kiểm sát",
+        "C": "Cơ quan quản lý nhà nước",
+        "D": "Cơ quan xét xử"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 2,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Trong bộ máy Nhà nước Cộng hoà xã hội chủ nghĩa Việt Nam, cơ quan thực hiện quyền hành pháp là:",
+      "options": {
+        "A": "Chính phủ",
+        "B": "Chủ tịch nước",
+        "C": "Quốc hội",
+        "D": "Viện kiểm sát nhân dân"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 3,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Trong bộ máy Nhà nước Cộng hoà xã hội chủ nghĩa Việt Nam, Tòa án nhân dân là:",
+      "options": {
+        "A": "Cơ quan xét xử",
+        "B": "Cơ quan kiểm sát",
+        "C": "Cơ quan giam giữ",
+        "D": "Cơ quan điều tra"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 4,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam do chủ thể nào ban hành?",
+      "options": {
+        "A": "Quốc hội",
+        "B": "Chính phủ",
+        "C": "Chủ tịch nước",
+        "D": "Đảng Cộng sản Việt Nam"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 5,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Quyền tự do đi lại và cư trú được quy định trong Hiến pháp năm 2013 thuộc nhóm quyền nào sau đây?",
+      "options": {
+        "A": "Quyền tự do nhân thân",
+        "B": "Quyền về dân chủ",
+        "C": "Quyền về chính trị",
+        "D": "Quyền sống và tự do thân thế"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 6,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Bộ phận trả lời cho câu hỏi được làm gì/ không được làm gì trong quy phạm pháp luật được gọi là:",
+      "options": {
+        "A": "Quy định",
+        "B": "Chế tài",
+        "C": "Giả định",
+        "D": "Quy tắc"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 7,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Quan hệ nào sau đây thuộc đối tượng điều chỉnh của luật dân sự:",
+      "options": {
+        "A": "Anh A bồi thường thiệt hại cho anh B do có hành vi gây thương tích cho anh B",
+        "B": "Cơ quan có thẩm quyền xử phạt anh A vì hành vi điều khiển xe khi không có giấy phép lái xe",
+        "C": "Nhà nước bồi thường cho hộ gia đình ông A khi thu hồi đất của hộ gia đình ông A để phục vụ cho mục đích an ninh, quốc phòng",
+        "D": "Cơ quan có thẩm quyền cấp Giấy chứng nhận quyền sử dụng đất cho hộ gia đình ông X"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 8,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Theo quy định của pháp luật dân sự Việt Nam hiện hành, quyền khác đối với tài sản bao gồm:",
+      "options": {
+        "A": "Tất cả các phương án đều đúng",
+        "B": "Quyền đối với bất động sản liền kề",
+        "C": "Quyền bề mặt",
+        "D": "Quyền hưởng dụng"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 9,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Theo quy định của pháp luật dân sự Việt Nam hiện hành, quyền của chủ thể được khai thác công dụng và hưởng hoa lợi, lợi tức đối với tài sản thuộc quyền sở hữu của chủ thể khác trong một thời hạn nhất định, được gọi là:",
+      "options": {
+        "A": "Quyền hưởng dụng",
+        "B": "Quyền sử dụng",
+        "C": "Quyền bề mặt",
+        "D": "Quyền đối với bất động sản liền kề"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 10,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Do phóng nhanh vượt ẩu nên anh K đã đâm vào bà H đi ngược chiều khiến bà H tử vong. Do không thỏa thuận được mức bồi thường tổn thất về tinh thần nên con của bà H đã khởi kiện K ra Tòa.",
+      "options": {
+        "A": "Không quá một trăm lần mức lương cơ sở do Nhà nước quy định",
+        "B": "Không quá ba mươi lần mức lương cơ sở do Nhà nước quy định",
+        "C": "Không quá năm mươi lần mức lương cơ sở do Nhà nước quy định",
+        "D": "Không quá mười lần mức lương cơ sở do Nhà nước quy định"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 11,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Người sử dụng lao động KHÔNG được đơn phương chấm dứt hợp đồng lao động vì lý do nào dưới đây?",
+      "options": {
+        "A": "Người lao động nữ mang thai",
+        "B": "Người lao động bị ốm đau, tai nạn đã điều trị quá thời hạn luật định mà khả năng lao động chưa hồi phục",
+        "C": "Người lao động thường xuyên không hoàn thành công việc theo hợp đồng lao động.",
+        "D": "Người lao động không có mặt tại nơi làm việc sau 15 ngày kể từ ngày hết thời hạn tạm hoãn thực hiện hợp đồng lao động"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 12,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Chị C là người lao động của Công ty X. Hợp đồng lao động chị đã ký với Công ty X có thời hạn là 9 tháng. Do tính chất công việc không ổn định nên sau khi làm việc được 5 tháng, chị C muốn đơn phương chấm dứt hợp đồng nhưng Công ty X không đồng ý.",
+      "options": {
+        "A": "Có quyền đơn phương chấm dứt hợp đồng lao động nhưng phải báo cho người sử dụng lao động biết trước ít nhất 03 ngày làm việc",
+        "B": "Có quyền đơn phương chấm dứt hợp đồng lao động nhưng phải báo cho người sử dụng lao động biết trước ít nhất 07 ngày",
+        "C": "Có quyền đơn phương chấm dứt hợp đồng lao động nhưng phải báo cho người sử dụng lao động biết trước ít nhất 45 ngày",
+        "D": "Có quyền đơn phương chấm dứt hợp đồng lao động nhưng phải báo trước cho người sử dụng lao động biết trước ít nhất 30 ngày"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 13,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Chị H là người lao động của Công ty X. Do Công ty cần hoàn thành gấp một lô hàng để trả cho đối tác nên huy động chị H làm thêm giờ vào ngày thường.",
+      "options": {
+        "A": "150% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường",
+        "B": "250% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường",
+        "C": "200% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường",
+        "D": "300% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 14,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Bảo hiểm xã hội tự nguyện có chế độ nào sau đây?",
+      "options": {
+        "A": "Hưu trí; Tử tuất",
+        "B": "Ốm đau; Hưu trí",
+        "C": "Ốm đau; Thai sản",
+        "D": "Thai sản; Tử tuất"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 15,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Người lao động làm nghề, công việc nặng nhọc, độc hại, nguy hiểm đủ 12 tháng cho một người sử dụng lao động thì được nghỉ hằng năm, hưởng nguyên lương theo hợp đồng lao động như sau:",
+      "options": {
+        "A": "14 ngày làm việc",
+        "B": "12 ngày làm việc",
+        "C": "10 ngày làm việc",
+        "D": "16 ngày làm việc"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 16,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Theo quy định của pháp luật hiện hành, nếu nhiều người cùng thực hiện một hành vi vi phạm hành chính thì:",
+      "options": {
+        "A": "Mỗi người vi phạm đều bị xử phạt về hành vi vi phạm hành chính đó",
+        "B": "Áp dụng hình thức xử phạt cao nhất tương ứng với hành vi vi phạm nặng nhất",
+        "C": "Tất cả các phương án đều đúng",
+        "D": "Áp dụng mức phạt tiền bằng 02 lần mức phạt tiền đối với một người thực hiện hành vi vi phạm"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 17,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Vì sợ muộn giờ làm nên anh M đã điều khiển xe máy vượt đèn đỏ. Vậy hành vi của anh M thuộc loại vi phạm pháp luật nào?",
+      "options": {
+        "A": "Vi phạm hành chính",
+        "B": "Vi phạm dân sự",
+        "C": "Vi phạm hình sự",
+        "D": "Vi phạm kỷ luật"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 18,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Chị Y vừa sinh con đầu lòng. Hôm nay, anh X – chồng chị Y – đến Ủy ban nhân dân phường M làm thủ tục đăng ký khai sinh cho con.\n\nHỏi: việc cấp Giấy khai sinh của Ủy ban nhân dân phòng M trong trường hợp này do ngành luật nào điều chỉnh?",
+      "options": {
+        "A": "Luật Hành chính",
+        "B": "Luật Hình sự",
+        "C": "Luật Lao động",
+        "D": "Luật Dân sự"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 19,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Khách thể của tội phạm là:",
+      "options": {
+        "A": "Những biểu hiện bên ngoài của tội phạm",
+        "B": "Người thực hiện hành vi phạm tội, có năng lực trách nhiệm hình sự và đạt một độ tuổi luật định",
+        "C": "Quan hệ xã hội được luật hình sự bảo vệ và bị tội phạm xâm hại",
+        "D": "Diễn biến tâm lý bên trong của người phạm tội"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 20,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Hành vi, hậu quả, mối quan hệ nhân quả giữa hành vi và hậu quả, thuộc về:",
+      "options": {
+        "A": "Chủ thể của tội phạm",
+        "B": "Mặt chủ quan của tội phạm",
+        "C": "Mặt khách quan của tội phạm",
+        "D": "Khách thể của tội phạm"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 21,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Diễn biến tâm lý bên trong của người phạm tội bao gồm lỗi, động cơ và mục đích phạm tội, được gọi là:",
+      "options": {
+        "A": "Chủ thể của tội phạm",
+        "B": "Mặt khách quan của tội phạm",
+        "C": "Khách thể của tội phạm",
+        "D": "Mặt chủ quan của tội phạm"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 22,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Do mâu thuẫn cá nhân, X đã dùng dao đâm liên tiếp vào người Y khiến Y tử vong. Lỗi của X trong trường hợp này là:",
+      "options": {
+        "A": "Lỗi cố ý gián tiếp",
+        "B": "Lỗi cố ý trực tiếp",
+        "C": "Lỗi vô ý do cẩu thả",
+        "D": "Lỗi vô ý vì quá tự tin"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Theo Luật Phòng, chống tham nhũng năm 2018, tham nhũng là:",
+      "options": {
+        "A": "Hành vi cửa quyền, hách dịch, đòi hỏi, gây khó khăn, phiền hà của người có chức vụ, quyền hạn",
+        "B": "Hành vi lợi dụng quyền hành để nhũng nhiễu nhân dân",
+        "C": "Tất cả các phương án đều đúng",
+        "D": "Hành vi của người có chức vụ, quyền hạn đã lợi dụng chức vụ, quyền hạn đó vì vụ lợi"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 24,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Ông Phạm Trường K là trưởng thôn S. Ông K được giao nhiệm vụ thanh toán 350 triệu đồng cho các chủ thầu xây dựng trong Chương trình xây dựng nông thôn mới. Tuy nhiên, ông K chỉ sử dụng 250 triệu đồng để chi trả; số tiền còn lại ông tiêu xài vào mục đích cá nhân.\n\nHành vi của ông K có phải là hành vi tham nhũng không?",
+      "options": {
+        "A": "Có",
+        "B": "Không"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 25,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Doanh nghiệp V chuyên sản xuất thuốc lá, trên vỏ bao thuốc lá, doanh nghiệp V luôn cho in đậm dòng chữ: “Hút thuốc lá có hại cho sức khỏe”. Doanh nghiệp V đang thực hiện:",
+      "options": {
+        "A": "Tất cả các phương án đều đúng",
+        "B": "Trách nhiệm bảo hành hàng hóa, linh kiện, phụ kiện",
+        "C": "Trách nhiệm cung cấp bằng chứng giao dịch",
+        "D": "Trách nhiệm cung cấp thông tin về hàng hóa, dịch vụ cho người tiêu dùng"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 26,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Trong bộ máy Nhà nước Cộng hoà xã hội chủ nghĩa Việt Nam, cơ quan thực hiện quyền lập hiến, quyền lập pháp là:",
+      "options": {
+        "A": "Chánh án Tòa án nhân dân tối cao",
+        "B": "Chính phủ",
+        "C": "Viện kiểm sát nhân dân tối cao",
+        "D": "Quốc hội"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 27,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Các cơ quan quản lý nhà nước (cơ quan chấp hành, cơ quan hành chính nhà nước) trong bộ máy Nhà nước Cộng hòa xã hội chủ nghĩa Việt Nam bao gồm:",
+      "options": {
+        "A": "Chính phủ và Hội đồng nhân dân các cấp",
+        "B": "Chính phủ và Chủ tịch nước",
+        "C": "Chính phủ và Ủy ban nhân dân các cấp",
+        "D": "Chính phủ và Quốc hội"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 28,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Trong bộ máy Nhà nước Cộng hoà xã hội chủ nghĩa Việt Nam, cơ quan thực hiện quyền tư pháp là:",
+      "options": {
+        "A": "Tòa án nhân dân",
+        "B": "Chủ tịch nước",
+        "C": "Viện kiểm sát nhân dân",
+        "D": "Quốc hội"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 29,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Theo Hiến pháp năm 2013, nước Cộng hòa xã hội chủ nghĩa Việt Nam do ai làm chủ?",
+      "options": {
+        "A": "Quốc hội",
+        "B": "Nhân dân",
+        "C": "Chính phủ",
+        "D": "Chủ tịch nước"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 30,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Quyền bầu cử, quyền ứng cử được quy định trong Hiến pháp năm 2013 thuộc nhóm quyền nào sau đây?",
+      "options": {
+        "A": "Quyền sống và tự do thân thế",
+        "B": "Quyền tự do nhân thân",
+        "C": "Quyền về dân chủ",
+        "D": "Quyền về chính trị"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 31,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Bộ phận của quy phạm pháp luật nêu lên những biện pháp tác động mà nhà nước dự kiến sẽ áp dụng đối với các chủ thể không thực hiện đúng mệnh lệnh của nhà nước đã nêu trong bộ phận quy định, được gọi là:",
+      "options": {
+        "A": "Chế định",
+        "B": "Giả định",
+        "C": "Quy định",
+        "D": "Chế tài chính xác"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 32,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Quan hệ nào sau đây thuộc đối tượng điều chỉnh của luật dân sự:",
+      "options": {
+        "A": "Anh A bồi thường thiệt hại cho anh B do có hành vi gây thương tích cho anh B",
+        "B": "Nhà nước bồi thường cho hộ gia đình ông A khi thu hồi đất của hộ gia đình ông A để phục vụ cho mục đích an ninh, quốc phòng",
+        "C": "Cơ quan có thẩm quyền cấp Giấy chứng nhận quyền sử dụng đất cho hộ gia đình ông X",
+        "D": "Cơ quan có thẩm quyền xử phạt anh A vì hành vi điều khiển xe khi không có giấy phép lái xe"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 33,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Theo quy định của pháp luật dân sự Việt Nam hiện hành, quyền khác đối với tài sản KHÔNG bao gồm:",
+      "options": {
+        "A": "Quyền đối với bất động sản liền kề",
+        "B": "Quyền hưởng dụng",
+        "C": "Quyền bề mặt",
+        "D": "Quyền sử dụng"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 34,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Theo quy định của pháp luật dân sự Việt Nam hiện hành, quyền của một chủ thể đối với mặt đất, mặt nước, khoảng không gian trên mặt đất, mặt nước và lòng đất mà quyền sử dụng đất đó thuộc về chủ thể khác, được gọi là:",
+      "options": {
+        "A": "Quyền bề mặt",
+        "B": "Quyền hưởng dụng",
+        "C": "Quyền đối với bất động sản liền kề",
+        "D": "Quyền về lối đi qua"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 35,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Do mâu thuẫn cá nhân nên A đã dùng dao tấn công, khiến B bị thương, để lại sẹo trên mặt. Ngoài chi phí điều trị, B yêu cầu A phải bồi thường một khoản tiền bù đắp tổn thất về tinh thần nhưng A không đồng ý.\n\nHỏi: Nếu các bên không thoả thuận được mức bồi thường bù đắp tổn thất về tinh thần trong trường hợp sức khỏe bị xâm phạm thì mức tối đa B được bồi thường trong trường hợp này là bao nhiêu?",
+      "options": {
+        "A": "Không quá một trăm lần mức lương cơ sở do Nhà nước quy định",
+        "B": "Không quá mười lần mức lương cơ sở do Nhà nước quy định",
+        "C": "Không quá ba mươi lần mức lương cơ sở do Nhà nước quy định",
+        "D": "Không quá năm mươi lần mức lương cơ sở do Nhà nước quy định"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 36,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Người sử dụng lao động KHÔNG được đơn phương chấm dứt hợp đồng lao động vì lý do nào dưới đây?",
+      "options": {
+        "A": "Người lao động không có mặt tại nơi làm việc sau 15 ngày kể từ ngày hết thời hạn tạm hoãn thực hiện hợp đồng lao động",
+        "B": "Người lao động bị ốm đau, tai nạn đã điều trị quá thời hạn luật định mà khả năng lao động chưa hồi phục",
+        "C": "Người lao động đang nghỉ thai sản hoặc nuôi con dưới 12 tháng tuổi",
+        "D": "Người lao động thường xuyên không hoàn thành công việc theo hợp đồng lao động"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 37,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Chị P làm việc theo hợp đồng lao động không xác định thời hạn với Công ty X. Vì muốn dành thời gian chăm sóc gia đình nên chị P muốn đơn phương chấm dứt hợp đồng lao động với Công ty X nhưng Công ty không đồng ý.\n\nHỏi: Theo quy định của pháp luật lao động hiện hành, chị P có quyền đơn phương chấm dứt hợp đồng lao động không?",
+      "options": {
+        "A": "Không có quyền đơn phương chấm dứt hợp đồng lao động",
+        "B": "Có quyền đơn phương chấm dứt hợp đồng lao động nhưng phải báo trước cho người sử dụng lao động biết trước ít nhất 30 ngày",
+        "C": "Có quyền đơn phương chấm dứt hợp đồng lao động nhưng phải báo cho người sử dụng lao động biết trước ít nhất 45 ngày",
+        "D": "Có quyền đơn phương chấm dứt hợp đồng lao động nhưng phải báo cho người sử dụng lao động biết trước ít nhất 45 ngày làm việc"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 38,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Anh Q là người lao động của Công ty M. Ngày nghỉ hàng tuần của anh Q là thứ 7 và Chủ nhật. Do Công ty cần hoàn thành gấp một lô hàng để trả cho đối tác nên huy động anh Q làm thêm giờ vào ngày Chủ nhật.\n\nHỏi: Tiền lương làm thêm giờ của anh Q trong trường hợp này là bao nhiêu?",
+      "options": {
+        "A": "150% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường",
+        "B": "250% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường",
+        "C": "300% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường",
+        "D": "200% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 39,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Chế độ Ốm đau, Thai sản thuộc:",
+      "options": {
+        "A": "Tất cả phương án đều sai",
+        "B": "Bảo hiểm xã hội tự nguyện",
+        "C": "Bảo hiểm xã hội bắt buộc",
+        "D": "Bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 40,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Người lao động làm nghề, công việc đặc biệt nặng nhọc, độc hại, nguy hiểm đủ 12 tháng cho một người sử dụng lao động thì được nghỉ hằng năm, hưởng nguyên lương theo hợp đồng lao động như sau:",
+      "options": {
+        "A": "14 ngày làm việc",
+        "B": "12 ngày làm việc",
+        "C": "16 ngày làm việc",
+        "D": "10 ngày làm việc"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 41,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Đối với cùng một hành vi vi phạm hành chính thì mức phạt tiền đối với tổ chức bằng:",
+      "options": {
+        "A": "04 lần mức phạt tiền đối với cá nhân",
+        "B": "2.5 lần mức phạt tiền đối với cá nhân",
+        "C": "03 lần mức phạt tiền đối với cá nhân",
+        "D": "02 lần mức phạt tiền đối với cá nhân"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 42,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Trên đường đi làm về, chị N đã quên đội mũ bảo hiểm khi chị điều khiển xe máy tham gia giao thông. Vậy hành vi của chị N thuộc loại vi phạm pháp luật nào?",
+      "options": {
+        "A": "Vi phạm hình sự",
+        "B": "Vi phạm hành chính",
+        "C": "Vi phạm dân sự",
+        "D": "Vi phạm kỷ luật"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 43,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Doanh nghiệp V đã có hành vi xả chất thải trái phép ra môi trường khiến môi trường bị ô nhiễm nặng. Vì vậy, Chánh Thanh tra Bộ Tài nguyên Môi trường đã ra quyết định xử phạt đối với doanh nghiệp V.\n\nHỏi: Việc xử phạt đối với doanh nghiệp V trong trường hợp này do ngành luật nào điều chỉnh?",
+      "options": {
+        "A": "Luật Dân sự",
+        "B": "Luật Hình sự",
+        "C": "Luật Lao động",
+        "D": "Luật Hành chính"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 44,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Mặt khách quan của tội phạm là:",
+      "options": {
+        "A": "Diễn biến tâm lý bên trong của người phạm tội",
+        "B": "Những biểu hiện bên ngoài của tội phạm bao gồm hành vi, hậu quả, mối quan hệ nhân quả giữa hành vi và hậu quả, công cụ, phương tiện, phương pháp, thủ đoạn, thời gian, địa điểm, và hoàn cảnh phạm tội",
+        "C": "Quan hệ xã hội được luật hình sự bảo vệ và bị tội phạm xâm hại",
+        "D": "Người thực hiện hành vi phạm tội, có năng lực trách nhiệm hình sự và đạt một độ tuổi luật định"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 45,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Mặt chủ quan của tội phạm là:",
+      "options": {
+        "A": "Những biểu hiện bên ngoài của tội phạm",
+        "B": "Người thực hiện hành vi phạm tội, có năng lực trách nhiệm hình sự",
+        "C": "Quan hệ xã hội được luật hình sự bảo vệ và bị tội phạm xâm hại",
+        "D": "Diễn biến tâm lý bên trong của người phạm tội bao gồm lỗi, động cơ và mục đích phạm tội"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 46,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Người thực hiện hành vi phạm tội, có năng lực trách nhiệm hình sự và đạt một độ tuổi luật định, được gọi là:",
+      "options": {
+        "A": "Mặt khách quan của tội phạm",
+        "B": "Mặt chủ quan của tội phạm",
+        "C": "Khách thể của tội phạm",
+        "D": "Chủ thể của tội phạm"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 47,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Chị H có thai ngoài ý muốn. Rạng sáng ngày 15/9, sau khi sinh con tại nhà, chị H đã đặt cháu bé vào trong giỏ quần áo cũ, đặt cạnh công viên với mục đích ai đi tập thể dục sớm sẽ phát hiện được và mang cháu bé về nuôi. Nhưng không may, khi được phát hiện cháu bé đã tử vong.\n\nLỗi của chị H trong trường hợp này là:",
+      "options": {
+        "A": "Lỗi cố ý gián tiếp",
+        "B": "Lỗi vô ý vì quá tự tin",
+        "C": "Lỗi cố ý trực tiếp",
+        "D": "Lỗi vô ý do cẩu thả"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 48,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Theo Luật Phòng, chống tham nhũng năm 2018, hành vi của người có chức vụ, quyền hạn đã lợi dụng chức vụ, quyền hạn đó vì vụ lợi được gọi là:",
+      "options": {
+        "A": "Nhũng nhiễu",
+        "B": "Tham nhũng",
+        "C": "Lợi dụng chức vụ, quyền hạn trong khi thi hành công vụ",
+        "D": "Tham ô"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 49,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Phan Đại H được Công ty S bổ nhiệm giữ chức vụ Trưởng Chi nhánh tại Huyện T. Trong quá trình làm việc, khi thu tiền của các đại lý, H không nộp lại cho công ty theo quy định, mà tự lập các biên bản đối chiếu xác nhận công nợ giả để chiếm đoạt tiền mà các đại lý đã trả cho công ty và sử dụng tiêu xài cá nhân.\n\nHỏi: hành vi của H có phải là hành vi tham nhũng không?",
+      "options": {
+        "A": "Có",
+        "B": "Không"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 50,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Doanh nghiệp T là doanh nghiệp chuyên sản xuất ô tô. Sau khi đưa sản phẩm ô tô mới ra mắt thị trường, doanh nghiệp T phát hiện sản phẩm này bị lỗi túi khí, khiến túi khí sẽ không bung trong trường hợp xảy ra tai nạn. Trong trường hợp này, doanh nghiệp T cần thực hiện:",
+      "options": {
+        "A": "Trách nhiệm thu hồi hàng hóa có khuyết tật",
+        "B": "Trách nhiệm cung cấp thông tin về hàng hóa, dịch vụ cho người tiêu dùng",
+        "C": "Trách nhiệm cung cấp bằng chứng giao dịch",
+        "D": "Tất cả các phương án đều đúng"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 51,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Các cơ quan quyền lực nhà nước trong bộ máy Nhà nước Cộng hòa xã hội chủ nghĩa Việt Nam bao gồm:",
+      "options": {
+        "A": "Quốc hội và Chính phủ",
+        "B": "Quốc hội, Hội đồng nhân dân và Ủy ban nhân dân các cấp",
+        "C": "Chính phủ và Ủy ban nhân dân",
+        "D": "Quốc hội và Hội đồng nhân dân các cấp"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 52,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Trong bộ máy Nhà nước Cộng hòa xã hội chủ nghĩa Việt Nam, Chính phủ và Ủy ban nhân dân các cấp là:",
+      "options": {
+        "A": "Cơ quan xét xử",
+        "B": "Cơ quan kiểm sát",
+        "C": "Cơ quan quyền lực nhà nước",
+        "D": "Cơ quan hành chính nhà nước"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 53,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Cơ quan xét xử của nước Cộng hòa xã hội chủ nghĩa Việt Nam là:",
+      "options": {
+        "A": "Công an",
+        "B": "Chính phủ",
+        "C": "Toà án nhân dân",
+        "D": "Viện kiểm sát nhân dân"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 54,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Trong hệ thống pháp luật Việt Nam, văn bản có hiệu lực pháp lý cao nhất là:",
+      "options": {
+        "A": "Lệnh",
+        "B": "Hiến pháp",
+        "C": "Nghị quyết",
+        "D": "Luật"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 55,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Quyền hiến mô, bộ phận cơ thể người và hiến xác được quy định trong Hiến pháp năm 2013 thuộc nhóm quyền nào sau đây?",
+      "options": {
+        "A": "Quyền sống và tự do thân thế",
+        "B": "Quyền về dân chủ",
+        "C": "Quyền về chính trị",
+        "D": "Quyền tự do nhân thân"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 56,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Bộ phận của quy phạm pháp luật dự kiến trước những điều kiện, hoàn cảnh có thể xảy ra trong cuộc sống mà chủ thể sẽ gặp phải, được gọi là:",
+      "options": {
+        "A": "Quy định",
+        "B": "Chế tài",
+        "C": "Giả định",
+        "D": "Chế định"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 57,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Nội dung của quyền sở hữu KHÔNG bao gồm:",
+      "options": {
+        "A": "Quyền chiếm hữu",
+        "B": "Quyền hưởng dụng",
+        "C": "Quyền sử dụng",
+        "D": "Quyền định đoạt"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 58,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Theo quy định của pháp luật dân sự Việt Nam hiện hành, quyền được thực hiện trên một bất động sản nhằm phục vụ cho việc khai thác một bất động sản khác thuộc quyền sở hữu của người khác, được gọi là:",
+      "options": {
+        "A": "Quyền hưởng dụng",
+        "B": "Quyền sử dụng",
+        "C": "Quyền bề mặt",
+        "D": "Quyền đối với bất động sản liền kề"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 59,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Do mâu thuẫn cá nhân nên chị H nhiều lần có lời nói xúc phạm, bôi nhọ chị (!) Vì vậy, chị A đã khởi kiện ra Tòa, yêu cầu chị H phải bồi thường thiệt hại do danh dự, nhân phẩm, uy tín bị xâm phạm. Ngoài thiệt hại vật chất, chị A còn yêu cầu chị H phải bồi thường tổn thất về tinh thần.\n\nHỏi: trong trường hợp hai bên không thỏa thuận được mức bồi thường tổn thất về tinh thần thì mức tối đa chị A được bồi thường trong trường hợp này là bao nhiêu?",
+      "options": {
+        "A": "Không quá mười lần mức lương cơ sở do Nhà nước quy định",
+        "B": "Không quá năm mươi lần mức lương cơ sở do Nhà nước quy định",
+        "C": "Không quá một trăm lần mức lương cơ sở do Nhà nước quy định",
+        "D": "Không quá ba mươi lần mức lương cơ sở do Nhà nước quy định"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 60,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Người sử dụng lao động KHÔNG được đơn phương chấm dứt hợp đồng lao động vì lý do nào dưới đây?",
+      "options": {
+        "A": "Người lao động không có mặt tại nơi làm việc sau 15 ngày kể từ ngày hết thời hạn tạm hoãn thực hiện hợp đồng lao động.",
+        "B": "Người lao động bị ốm đau, tai nạn đã điều trị quá thời hạn luật định mà khả năng lao động chưa hồi phục",
+        "C": "Người lao động thường xuyên không hoàn thành công việc theo hợp đồng lao động.",
+        "D": "Người lao động đang nghỉ hằng năm, nghỉ việc riêng và trường hợp nghỉ khác được người sử dụng lao động đồng ý."
+      },
+      "answer": "D"
+    },
+    {
+      "id": 61,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Anh P ký hợp đồng lao động có thời hạn là 24 tháng với Công ty H. Sau một thời gian làm việc, do tìm được công việc khác tốt hơn nên anh P muốn đơn phương chấm dứt hợp đồng lao động với Công ty H.\n\nTheo quy định của pháp luật lao động hiện hành, anh P có quyền đơn phương chấm dứt hợp đồng lao động đã giao kết không?",
+      "options": {
+        "A": "Có quyền đơn phương chấm dứt hợp đồng lao động nhưng phải báo cho người sử dụng lao động biết trước ít nhất 45 ngày làm việc",
+        "B": "Có quyền đơn phương chấm dứt hợp đồng lao động nhưng phải báo cho người sử dụng lao động biết trước ít nhất 30 ngày làm việc",
+        "C": "Không có quyền đơn phương chấm dứt hợp đồng lao động",
+        "D": "Có quyền đơn phương chấm dứt hợp đồng lao động nhưng phải báo trước cho người sử dụng lao động biết trước ít nhất 30 ngày"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 62,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Chị Y là người lao động của Công ty P. Do Công ty cần hoàn thành gấp một lô hàng để trả cho đối tác nên huy động chị Y làm thêm giờ vào ngày mùng 02/9.\n\nHỏi: tiền lương làm thêm giờ của chị Y trong trường hợp này là bao nhiêu?",
+      "options": {
+        "A": "250% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường",
+        "B": "300% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường",
+        "C": "150% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường",
+        "D": "200% tiền lương giờ thực trả của công việc đang làm vào ngày làm việc bình thường"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 63,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Bảo hiểm xã hội bắt buộc có chế độ nào sau đây?",
+      "options": {
+        "A": "Ốm đau; Thai sản; Thất nghiệp; Hưu trí; Tử tuất",
+        "B": "Ốm đau; Nhân thọ; Tai nạn lao động, bệnh nghề nghiệp; Hưu trí; Tử tuất",
+        "C": "Ốm đau; Thai sản; Tai nạn lao động, bệnh nghề nghiệp; Hưu trí",
+        "D": "Ốm đau; Thai sản; Tai nạn lao động, bệnh nghề nghiệp; Hưu trí; Tử tuất"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 64,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Người lao động làm công việc trong điều kiện bình thường đủ 12 tháng cho một người sử dụng lao động thì được nghỉ hằng năm, hưởng nguyên lương theo hợp đồng lao động như sau:",
+      "options": {
+        "A": "10 ngày làm việc",
+        "B": "14 ngày làm việc",
+        "C": "16 ngày làm việc",
+        "D": "12 ngày làm việc"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 65,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Theo quy định của pháp luật hiện hành, một hành vi vi phạm hành chính:",
+      "options": {
+        "A": "Chỉ bị xử phạt một lần",
+        "B": "Tối đa được xử phạt hai lần",
+        "C": "Có thể bị xử phạt nhiều lần",
+        "D": "Tất cả các phương án đều sai"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 66,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "X là sinh viên của một trường đại học. Do sợ muộn giờ vào lớp, X đã đi vào đường ngược chiều. Vậy hành vi của X thuộc loại vi phạm pháp luật nào?",
+      "options": {
+        "A": "Vi phạm dân sự",
+        "B": "Vi phạm hình sự",
+        "C": "Vi phạm hành chính",
+        "D": "Vi phạm kỷ luật"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 67,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Sau một thời gian tìm hiểu, anh Q và chị K đã quyết định đến Uỷ ban nhân dân phường C làm thủ tục đăng ký kết hôn.\n\nHỏi: việc cấp Giấy chứng nhận đăng ký kết hôn của Ủy ban nhân dân phường C trong trường hợp này do ngành luật nào điều chỉnh:",
+      "options": {
+        "A": "Luật Hình sự",
+        "B": "Luật Dân sự",
+        "C": "Luật Lao động",
+        "D": "Luật Hành chính"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 68,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Quan hệ xã hội được luật hình sự bảo vệ và bị tội phạm xâm hại bằng cách gây thiệt hại hoặc đe dọa gây thiệt hại cho các quan hệ xã hội đó, được gọi là:",
+      "options": {
+        "A": "Chủ thể của tội phạm",
+        "B": "Mặt chủ quan của tội phạm",
+        "C": "Khách thể của tội phạm",
+        "D": "Mặt khách quan của tội phạm"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 69,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Mặt khách quan của tội phạm bao gồm:",
+      "options": {
+        "A": "Hành vi, hậu quả, mối quan hệ nhân quả giữa hành vi và hậu quả",
+        "B": "Chủ thể, hành vi, hậu quả, mối quan hệ nhân quả giữa hành vi và hậu quả",
+        "C": "Hành vi, hậu quả, mối quan hệ nhân quả giữa hành vi và hậu quả; Lỗi",
+        "D": "Lỗi, động cơ và mục đích phạm tội"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 70,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Chủ thể của tội phạm là:",
+      "options": {
+        "A": "Người thực hiện hành vi phạm tội, có năng lực trách nhiệm hình sự",
+        "B": "Người thực hiện hành vi phạm tội, có năng lực trách nhiệm hình sự và đạt một độ tuổi luật định",
+        "C": "Diễn biến tâm lý bên trong bao gồm lỗi, động cơ và mục đích phạm tội",
+        "D": "Người thực hiện hành vi phạm tội và đạt một độ tuổi luật định"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 71,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Chị G là nhân viên Khoa Sản của Bệnh viện K. Sáng 28/8, trong khi thực hiện y lệnh của bác sĩ về việc tiêm vắc-xin viêm gan B cho 02 trẻ sơ sinh thì bệnh viện mất điện. Chị G đã đã đến nơi đặt tủ lạnh bảo quản thuốc, dùng đèn pin điện thoại chiếu sáng để lấy thuốc. Do sơ suất, không xem lại nhãn thuốc nên chị G đã lấy nhầm vắc-xin viêm gan B thành thuốc ESMERON (một loại thuốc gây mê) để tiêm cho trẻ.\n\nHậu quả hai bé sơ sinh tử vong. Lỗi của chị G trong trường hợp này là:",
+      "options": {
+        "A": "Lỗi vô ý vì quá tự tin",
+        "B": "Lỗi cố ý trực tiếp",
+        "C": "Lỗi cố ý gián tiếp",
+        "D": "Lỗi vô ý do cẩu thả"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 72,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Điền từ thích hợp vào chỗ trống:\n\n“............... là hành vi của người có chức vụ, quyền hạn đã lợi dụng chức vụ, quyền hạn đó vì vụ lợi” (Khoản 1 Điều 3 Luật Phòng, chống tham nhũng năm 2018)",
+      "options": {
+        "A": "Nhận hối lộ",
+        "B": "Tham ô",
+        "C": "Tham nhũng",
+        "D": "Nhũng nhiễu"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 73,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Trong quá trình triển khai thực hiện dự án tuyên truyền về phòng chống HIV của Trung tâm y tế huyện K, ông A là Giám đốc Trung tâm y tế và bà B là kế toán trung tâm đã bàn bạc lập khống hóa đơn, chứng từ để chiếm đoạt, gây thiệt hại cho ngân sách Nhà nước số tiền là 150 triệu đồng.\n\nHành vi của ông A và bà B có phải là hành vi tham nhũng không?",
+      "options": {
+        "A": "Có",
+        "B": "Không"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 74,
+      "source": "original",
+      "sourceLabel": "Đề ôn tập gốc",
+      "question": "Anh M mua một chiếc tủ lạnh tại Trung tâm điện máy N, khi giao hàng cho anh M, nhân viên Trung tâm điện máy đã đưa cho anh hóa đơn mua hàng. Trung tâm điện máy N đang thực hiện:",
+      "options": {
+        "A": "Trách nhiệm cung cấp thông tin về hàng hóa, dịch vụ cho người tiêu dùng",
+        "B": "Trách nhiệm cung cấp bằng chứng giao dịch",
+        "C": "Trách nhiệm bảo hành hàng hóa, linh kiện, phụ kiện",
+        "D": "Tất cả các phương án đều đúng"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 75,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Hệ thống pháp luật",
+      "question": "Trong hệ thống pháp luật Việt Nam, ngành luật được hiểu là:",
+      "options": {
+        "A": "Tổng thể các quy phạm pháp luật điều chỉnh một nhóm quan hệ xã hội cùng tính chất bằng phương pháp điều chỉnh nhất định",
+        "B": "Một văn bản pháp luật riêng lẻ do Quốc hội ban hành",
+        "C": "Một điều luật quy định hình phạt cụ thể",
+        "D": "Một quyết định áp dụng pháp luật cho một cá nhân cụ thể"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 76,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Hệ thống pháp luật",
+      "question": "Chế định pháp luật là:",
+      "options": {
+        "A": "Một hình thức xử lý người vi phạm pháp luật",
+        "B": "Một nhóm quy phạm pháp luật điều chỉnh một nhóm quan hệ xã hội cùng loại trong một ngành luật",
+        "C": "Một quyết định xử phạt hành chính",
+        "D": "Một quyền nhân thân của công dân"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 77,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Văn bản quy phạm pháp luật",
+      "question": "Đặc điểm cơ bản của văn bản quy phạm pháp luật là:",
+      "options": {
+        "A": "Chỉ áp dụng một lần cho một cá nhân cụ thể",
+        "B": "Chứa quy tắc xử sự chung, có hiệu lực bắt buộc chung và được áp dụng nhiều lần",
+        "C": "Luôn do cá nhân tự thỏa thuận lập ra",
+        "D": "Chỉ dùng để ghi nhận kết quả hòa giải"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 78,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Luật dân sự",
+      "question": "Một giao dịch dân sự có hiệu lực khi đáp ứng điều kiện nào sau đây?",
+      "options": {
+        "A": "Chủ thể có năng lực pháp luật, năng lực hành vi phù hợp",
+        "B": "Chủ thể tham gia hoàn toàn tự nguyện",
+        "C": "Mục đích và nội dung không vi phạm điều cấm của luật, không trái đạo đức xã hội",
+        "D": "Tất cả các phương án đều đúng"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 79,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Luật dân sự",
+      "question": "Phương pháp điều chỉnh đặc trưng của luật dân sự là:",
+      "options": {
+        "A": "Mệnh lệnh, quyền uy và phục tùng tuyệt đối",
+        "B": "Bình đẳng, thỏa thuận và tự định đoạt của các chủ thể",
+        "C": "Truy cứu trách nhiệm hình sự",
+        "D": "Xử phạt hành chính theo thủ tục đơn phương"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 80,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Hợp đồng dân sự",
+      "question": "Nội dung nào sau đây thường là nội dung của hợp đồng dân sự?",
+      "options": {
+        "A": "Đối tượng của hợp đồng",
+        "B": "Số lượng, chất lượng, giá và phương thức thanh toán",
+        "C": "Quyền, nghĩa vụ và trách nhiệm do vi phạm hợp đồng",
+        "D": "Tất cả các phương án đều đúng"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 81,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Luật hành chính",
+      "question": "Vi phạm hành chính là hành vi:",
+      "options": {
+        "A": "Có lỗi, vi phạm quy định quản lý nhà nước, không phải là tội phạm và theo luật phải bị xử phạt vi phạm hành chính",
+        "B": "Mọi hành vi gây thiệt hại trong quan hệ hợp đồng",
+        "C": "Chỉ bao gồm các hành vi bị phạt tù",
+        "D": "Chỉ phát sinh giữa người lao động và người sử dụng lao động"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 82,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Xử lý vi phạm hành chính",
+      "question": "Đâu là biện pháp khắc phục hậu quả trong xử lý vi phạm hành chính?",
+      "options": {
+        "A": "Buộc khôi phục lại tình trạng ban đầu",
+        "B": "Tù có thời hạn",
+        "C": "Tù chung thân",
+        "D": "Tử hình"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 83,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Luật hình sự",
+      "question": "Theo cách hiểu cơ bản của luật hình sự, tội phạm là:",
+      "options": {
+        "A": "Hành vi nguy hiểm cho xã hội được quy định trong Bộ luật Hình sự, do chủ thể có năng lực trách nhiệm hình sự thực hiện một cách cố ý hoặc vô ý",
+        "B": "Mọi hành vi trái đạo đức xã hội",
+        "C": "Mọi vi phạm kỷ luật lao động",
+        "D": "Mọi tranh chấp về tài sản giữa cá nhân với cá nhân"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 84,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Luật hình sự",
+      "question": "Căn cứ chủ yếu để phân loại tội phạm trong Bộ luật Hình sự là:",
+      "options": {
+        "A": "Địa điểm xảy ra hành vi",
+        "B": "Tính chất và mức độ nguy hiểm cho xã hội của hành vi phạm tội",
+        "C": "Nghề nghiệp của người phạm tội",
+        "D": "Thời điểm người phạm tội bị bắt"
+      },
+      "answer": "B"
+    },
+    {
+      "id": 85,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Hình phạt",
+      "question": "Hình phạt nào sau đây là hình phạt chính trong pháp luật hình sự Việt Nam?",
+      "options": {
+        "A": "Cấm đảm nhiệm chức vụ",
+        "B": "Cấm cư trú",
+        "C": "Tù có thời hạn",
+        "D": "Tước một số quyền công dân"
+      },
+      "answer": "C"
+    },
+    {
+      "id": 86,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Hình phạt",
+      "question": "Hình phạt nào sau đây thường được xem là hình phạt bổ sung?",
+      "options": {
+        "A": "Tù chung thân",
+        "B": "Tử hình",
+        "C": "Cải tạo không giam giữ",
+        "D": "Cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 87,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Phòng, chống tham nhũng",
+      "question": "Công dân tham gia phòng, chống tham nhũng có quyền nào sau đây?",
+      "options": {
+        "A": "Phản ánh, tố cáo, tố giác, báo tin về hành vi tham nhũng theo quy định của pháp luật",
+        "B": "Tự ý khám xét nơi ở của người bị nghi ngờ tham nhũng",
+        "C": "Tự mình ra quyết định xử phạt người có hành vi tham nhũng",
+        "D": "Tự ý thu hồi tài sản của người bị nghi ngờ tham nhũng"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 88,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Phòng, chống tham nhũng",
+      "question": "Hậu quả của tham nhũng có thể là:",
+      "options": {
+        "A": "Gây thất thoát tài sản, làm suy giảm hiệu quả quản lý nhà nước",
+        "B": "Làm giảm niềm tin của nhân dân vào cơ quan, tổ chức",
+        "C": "Gây bất bình đẳng và cản trở phát triển xã hội",
+        "D": "Tất cả các phương án đều đúng"
+      },
+      "answer": "D"
+    },
+    {
+      "id": 89,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Bảo vệ quyền lợi người tiêu dùng",
+      "question": "Quyền cơ bản của người tiêu dùng bao gồm:",
+      "options": {
+        "A": "Được bảo đảm an toàn tính mạng, sức khỏe, tài sản, quyền và lợi ích hợp pháp khi giao dịch, sử dụng hàng hóa, dịch vụ",
+        "B": "Không cần cung cấp bất kỳ thông tin nào khi giao dịch",
+        "C": "Được tự ý thay đổi nhãn hàng hóa của doanh nghiệp",
+        "D": "Được miễn mọi nghĩa vụ thanh toán trong mọi trường hợp"
+      },
+      "answer": "A"
+    },
+    {
+      "id": 90,
+      "source": "suggested",
+      "sourceLabel": "Bổ sung từ nội dung đã học",
+      "topic": "Bảo vệ quyền lợi người tiêu dùng",
+      "question": "Nghĩa vụ phù hợp của người tiêu dùng là:",
+      "options": {
+        "A": "Kiểm tra hàng hóa trước khi nhận và sử dụng hàng hóa, dịch vụ đúng hướng dẫn",
+        "B": "Cố tình cung cấp thông tin sai lệch khi mua hàng",
+        "C": "Sử dụng hàng hóa trái quy định để yêu cầu bồi thường",
+        "D": "Tự ý phá hủy chứng từ giao dịch rồi yêu cầu doanh nghiệp hoàn tiền"
+      },
+      "answer": "A"
+    }
+  ]
+}

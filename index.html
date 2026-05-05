@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Tập Trắc Nghiệm - Pháp Luật</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fallback: Preload system fonts for Vietnamese support -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --red: #D51C30;
+            --blue: #193E6A;
+            --green: #22a855;
+            --white: #FFFFFF;
+            --black: #000000;
+            
+            --bg-primary: var(--white);
+            --bg-secondary: var(--white);
+            --bg-card: var(--white);
+            --bg-hover: var(--white);
+            --bg-option: var(--white);
+            --text-primary: var(--black);
+            --text-secondary: var(--blue);
+            --accent: var(--blue);
+            --accent-light: var(--white);
+            --accent-dark: var(--blue);
+            --success: var(--green);
+            --success-bg: var(--white);
+            --error: var(--red);
+            --error-bg: var(--white);
+            --border: var(--blue);
+            --border-hover: var(--blue);
+            --shadow: none;
+            --shadow-md: none;
+            --shadow-lg: none;
+            --radius: 8px;
+            --radius-sm: 6px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Ensure consistent font rendering across all devices */
+        html {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        button, input, select, textarea {
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 16px 24px;
+        }
+
+        /* Start Screen */
+        .start-screen {
+            text-align: center;
+            padding: 48px 20px;
+            margin-top: 20px;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .start-screen h2 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: #183F68;
+        }
+
+        .start-screen .subtitle {
+            color: var(--blue);
+            margin-bottom: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .start-screen .school {
+            color: #CE1D30;
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .info-box {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+            color: var(--black);
+            font-size: 0.95rem;
+        }
+
+        .info-box span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .source-controls {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .source-btn {
+            background: var(--white);
+            border: 2px solid var(--blue);
+            color: var(--blue);
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .source-btn:hover,
+        .source-btn.active {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        .disclaimer {
+            margin-top: 28px;
+            font-size: 0.75rem;
+            color: #888;
+            line-height: 1.5;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .start-btn {
+            background: var(--blue);
+            border: none;
+            color: var(--white);
+            padding: 14px 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .start-btn:hover {
+            background: var(--black);
+        }
+
+        /* Quiz Layout */
+        .quiz-layout {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .quiz-main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .quiz-sidebar {
+            width: 260px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 20px;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        /* Question Grid */
+        .question-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 3px;
+            padding: 10px;
+            background: var(--white);
+            border: 2px solid var(--blue);
+            border-radius: 8px;
+        }
+
+        @media (max-width: 900px) {
+            .quiz-layout {
+                flex-direction: column;
+            }
+            .quiz-sidebar {
+                width: 100%;
+                position: static;
+                max-height: none;
+                order: 2;
+            }
+            .quiz-main {
+                width: 100%;
+                order: 1;
+            }
+            .question-grid {
+                grid-template-columns: repeat(14, 1fr);
+                gap: 2px;
+                padding: 8px;
+            }
+            .grid-cell {
+                font-size: 0.55rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .question-grid {
+                grid-template-columns: repeat(10, 1fr);
+            }
+        }
+
+        .grid-cell {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: 600;
+            border: 1px solid var(--blue);
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            background: var(--white);
+            color: var(--blue);
+        }
+
+        .grid-cell:hover {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        .grid-cell.current {
+            background: var(--blue);
+            color: var(--white);
+            box-shadow: 0 0 0 2px var(--blue);
+        }
+
+        .grid-cell.answered {
+            background: var(--blue);
+            color: var(--white);
+            opacity: 0.6;
+        }
+
+        .grid-cell.correct {
+            background: var(--green);
+            border-color: var(--green);
+            color: var(--white);
+            opacity: 1;
+        }
+
+        .grid-cell.wrong {
+            background: var(--red);
+            border-color: var(--red);
+            color: var(--white);
+            opacity: 1;
+        }
+
+        /* Question Card */
+        .question-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .question-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .question-number {
+            display: inline-block;
+            background: var(--blue);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .source-badge {
+            display: inline-block;
+            border: 1px solid var(--blue);
+            color: var(--blue);
+            background: var(--white);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .source-badge.suggested {
+            border-color: var(--red);
+            color: var(--red);
+        }
+
+        .question-text {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            white-space: pre-line;
+        }
+
+        /* Options */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .option {
+            background: var(--bg-option);
+            border: 2px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .option:hover:not(.disabled) {
+            background: var(--white);
+            border-color: var(--blue);
+            border-width: 3px;
+        }
+
+        .option.selected {
+            border-color: var(--blue);
+            background: var(--white);
+        }
+
+        .option.correct {
+            border-color: var(--green);
+            background: var(--white);
+            border-width: 3px;
+        }
+
+        .option.wrong {
+            border-color: var(--red);
+            background: var(--white);
+            border-width: 3px;
+        }
+
+        .option.disabled {
+            cursor: default;
+        }
+
+        .option-key {
+            min-width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border: 2px solid var(--blue);
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--blue);
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .option:hover:not(.disabled) .option-key,
+        .option.selected .option-key {
+            background: var(--blue);
+            border-color: var(--blue);
+            color: var(--white);
+        }
+
+        .option.correct .option-key {
+            background: var(--green);
+            border-color: var(--green);
+            color: var(--white);
+        }
+
+        .option.wrong .option-key {
+            background: var(--red);
+            border-color: var(--red);
+            color: var(--white);
+        }
+
+        .option-text {
+            flex: 1;
+            padding-top: 3px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            gap: 16px;
+        }
+
+        .nav-btn {
+            background: var(--white);
+            border: 2px solid var(--blue);
+            color: var(--blue);
+            padding: 12px 24px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .nav-btn.primary {
+            background: var(--blue);
+            border: 2px solid var(--blue);
+            color: var(--white);
+        }
+
+        .nav-btn.primary:hover:not(:disabled) {
+            background: var(--black);
+            border-color: var(--black);
+        }
+
+        /* Result Screen */
+        .result-screen {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .result-circle {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            border: 4px solid var(--blue);
+        }
+
+        .result-score {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--blue);
+        }
+
+        .result-total {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .result-message {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .result-detail {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            padding: 18px;
+            text-align: center;
+            border: 2px solid var(--blue);
+        }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--blue);
+        }
+
+        .stat-value.correct {
+            color: var(--green);
+        }
+
+        .stat-value.wrong {
+            color: var(--red);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* Responsive for Laptop */
+        @media (min-width: 1024px) {
+            .container {
+                padding: 32px 48px;
+            }
+
+            .question-card {
+                padding: 32px 40px;
+            }
+
+            .option {
+                padding: 16px 20px;
+            }
+
+            .option:hover:not(.disabled) {
+                transform: translateX(4px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 16px;
+            }
+
+            .question-card {
+                padding: 20px;
+                min-width: 100%;
+            }
+
+            .option {
+                padding: 12px 14px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                flex-direction: row;
+                gap: 12px;
+            }
+
+            .navigation .nav-btn {
+                flex: 1;
+                padding: 12px 16px;
+                font-size: 0.9rem;
+            }
+
+            .result-actions {
+                flex-direction: column;
+            }
+        }
+
+        /* Hidden */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Review Mode */
+        .review-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 28px;
+            text-align: left;
+        }
+
+        .review-card {
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            border: 2px solid var(--blue);
+        }
+
+        .review-card.incorrect {
+            border-left: 4px solid var(--red);
+        }
+
+        .review-card.is-correct {
+            border-left: 4px solid var(--green);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .review-status {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .review-status.correct {
+            background: var(--white);
+            color: var(--green);
+            border: 1px solid var(--green);
+        }
+
+        .review-status.wrong {
+            background: var(--white);
+            color: var(--red);
+            border: 1px solid var(--red);
+        }
+
+        .review-question {
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+            white-space: pre-line;
+        }
+
+        .review-answer {
+            font-size: 0.9rem;
+            color: var(--black);
+        }
+
+        .review-answer span {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        .your-answer {
+            color: var(--red) !important;
+        }
+
+        /* Filter tabs for review */
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            border: 2px solid var(--blue);
+            color: var(--blue);
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--blue);
+            border-color: var(--blue);
+            color: var(--white);
+        }
+
+        /* Donate Modal */
+        .donate-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .donate-content {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            max-width: 360px;
+            width: 90%;
+            position: relative;
+            border: 3px solid var(--blue);
+        }
+
+        .donate-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--black);
+            line-height: 1;
+        }
+
+        .donate-close:hover {
+            color: var(--red);
+        }
+
+        .donate-sticker {
+            width: 120px;
+            height: auto;
+            margin-bottom: 16px;
+        }
+
+        .donate-content h3 {
+            color: var(--green);
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .donate-content p {
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+
+        .donate-text {
+            color: var(--blue) !important;
+            font-size: 0.9rem;
+            margin-top: 16px !important;
+        }
+
+        .donate-qr {
+            width: 200px;
+            height: auto;
+            margin-top: 16px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Start Screen -->
+        <div id="startScreen" class="start-screen">
+            <h2>Ôn Tập Pháp Luật</h2>
+            <p class="subtitle">Trắc nghiệm lý thuyết • Pháp luật (CĐ)</p>
+            <p class="school">Cao Đẳng Việt Mỹ</p>
+            <div class="info-box">
+                <span id="questionCount">90 câu hỏi</span>
+                <span>•</span>
+                <span><span id="originalCount">74</span> câu gốc</span>
+                <span>•</span>
+                <span><span id="suggestedCount">16</span> câu bổ sung</span>
+            </div>
+            <div class="source-controls" id="sourceControls" aria-label="Chọn nhóm câu hỏi">
+                <button class="source-btn active" data-source="all">Tất cả</button>
+                <button class="source-btn" data-source="original">Đề gốc</button>
+                <button class="source-btn" data-source="suggested">Bổ sung</button>
+            </div>
+            <button class="start-btn" id="startBtn">Bắt đầu làm bài</button>
+            <p class="disclaimer">Nội dung chỉ mang tính chất tham khảo. Đáp án được tự chọn để ôn tập; câu bổ sung được tạo từ phạm vi nội dung đã học và luôn có nhãn riêng trong lúc làm bài.</p>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="hidden">
+            <div class="quiz-layout">
+                <div class="quiz-main">
+                    <div class="question-card" id="questionCard">
+                        <div class="question-meta">
+                            <span class="question-number" id="questionNumber">Câu 1</span>
+                            <span class="source-badge" id="questionSource">Đề ôn tập gốc</span>
+                        </div>
+                        <div class="question-text" id="questionText"></div>
+                        <div class="options" id="optionsContainer"></div>
+                    </div>
+
+                    <div class="navigation">
+                        <button class="nav-btn" id="prevBtn" disabled>← Quay lại</button>
+                        <button class="nav-btn primary" id="nextBtn">Tiếp theo →</button>
+                    </div>
+                </div>
+
+                <div class="quiz-sidebar">
+                    <div class="question-grid" id="questionGrid"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="resultScreen" class="hidden result-screen">
+            <div class="result-circle">
+                <div class="result-score" id="finalScore">0</div>
+                <div class="result-total" id="totalQuestions">/ 90 câu</div>
+            </div>
+            
+            <div class="result-message" id="resultMessage">Kết quả của bạn</div>
+            <div class="result-detail" id="resultDetail"></div>
+
+            <div class="stats" id="statsContainer">
+                <div class="stat-card">
+                    <div class="stat-value correct" id="correctCount">0</div>
+                    <div class="stat-label">Đúng</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value wrong" id="wrongCount">0</div>
+                    <div class="stat-label">Sai</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="percentScore">0%</div>
+                    <div class="stat-label">Tỷ lệ</div>
+                </div>
+            </div>
+
+            <div class="result-actions">
+                <button class="nav-btn" id="reviewBtn">Xem lại đáp án</button>
+                <button class="nav-btn primary" id="restartBtn">Làm lại</button>
+            </div>
+
+            <div class="filter-tabs hidden" id="filterTabs">
+                <button class="filter-btn active" data-filter="all">Tất cả</button>
+                <button class="filter-btn" data-filter="wrong">Chỉ câu sai</button>
+                <button class="filter-btn" data-filter="correct">Chỉ câu đúng</button>
+            </div>
+
+            <div class="review-list hidden" id="reviewList"></div>
+        </div>
+
+        <!-- Easter Egg - Donate -->
+        <div id="donateModal" class="donate-modal hidden">
+            <div class="donate-content">
+                <button class="donate-close" id="closeDonate">&times;</button>
+                <img src="donate-sticker.png" alt="Sticker" class="donate-sticker">
+                <h3 id="perfectTitle">Tuyệt vời! 90/90</h3>
+                <p>Bạn đã hoàn thành xuất sắc!</p>
+                <p class="donate-text">Nếu thấy hữu ích, hãy ủng hộ tác giả một ly cà phê nhé!</p>
+                <img src="donate-qr.png" alt="QR Donate" class="donate-qr">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz Application
+        class QuizApp {
+            constructor() {
+                this.questions = [];
+                this.metadata = null;
+                this.currentQuestions = [];
+                this.currentIndex = 0;
+                this.score = 0;
+                this.answers = [];
+                this.reviewFilter = 'all';
+                this.activeSource = 'all';
+                
+                this.init();
+            }
+
+            async init() {
+                await this.loadQuestions();
+                this.bindEvents();
+            }
+
+            async loadQuestions() {
+                try {
+                    const response = await fetch('questions.json');
+                    const data = await response.json();
+                    this.metadata = data;
+                    this.questions = data.questions;
+                    this.updateStartInfo(data);
+                } catch (error) {
+                    console.error('Error loading questions:', error);
+                }
+            }
+
+            updateStartInfo(data) {
+                const summary = data.summary || {
+                    original: this.questions.filter(q => q.source === 'original').length,
+                    suggested: this.questions.filter(q => q.source === 'suggested').length,
+                    total: this.questions.length
+                };
+
+                document.getElementById('questionCount').textContent = `${summary.total} câu hỏi`;
+                document.getElementById('originalCount').textContent = summary.original;
+                document.getElementById('suggestedCount').textContent = summary.suggested;
+                document.getElementById('totalQuestions').textContent = `/ ${summary.total} câu`;
+                document.getElementById('perfectTitle').textContent = `Tuyệt vời! ${summary.total}/${summary.total}`;
+            }
+
+            bindEvents() {
+                // Start button
+                document.getElementById('startBtn').addEventListener('click', () => this.startQuiz());
+
+                // Source filter on start screen
+                document.querySelectorAll('.source-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        document.querySelectorAll('.source-btn').forEach(b => b.classList.remove('active'));
+                        e.target.classList.add('active');
+                        this.activeSource = e.target.dataset.source;
+                    });
+                });
+
+                // Navigation buttons
+                document.getElementById('prevBtn').addEventListener('click', () => this.previousQuestion());
+                document.getElementById('nextBtn').addEventListener('click', () => this.nextQuestion());
+
+                // Result buttons
+                document.getElementById('restartBtn').addEventListener('click', () => this.restart());
+                document.getElementById('reviewBtn').addEventListener('click', () => this.toggleReview());
+
+                // Filter buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                        e.target.classList.add('active');
+                        this.reviewFilter = e.target.dataset.filter;
+                        this.renderReview();
+                    });
+                });
+
+                // Close donate modal
+                document.getElementById('closeDonate').addEventListener('click', () => {
+                    document.getElementById('donateModal').classList.add('hidden');
+                });
+                document.getElementById('donateModal').addEventListener('click', (e) => {
+                    if (e.target.id === 'donateModal') {
+                        document.getElementById('donateModal').classList.add('hidden');
+                    }
+                });
+
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (document.getElementById('quizScreen').classList.contains('hidden')) return;
+                    
+                    if (e.key >= '1' && e.key <= '4') {
+                        const keys = ['A', 'B', 'C', 'D'];
+                        const index = parseInt(e.key) - 1;
+                        const key = keys[index];
+                        const question = this.currentQuestions[this.currentIndex];
+                        if (this.answers[this.currentIndex] === null && question.options[key]) {
+                            this.selectAnswer(key);
+                        }
+                    } else if (e.key === 'ArrowRight' || e.key === 'Enter') {
+                        this.nextQuestion();
+                    } else if (e.key === 'ArrowLeft') {
+                        this.previousQuestion();
+                    }
+                });
+            }
+
+            startQuiz() {
+                const selectedQuestions = this.activeSource === 'all'
+                    ? this.questions
+                    : this.questions.filter(question => question.source === this.activeSource);
+
+                this.currentQuestions = this.shuffleArray([...selectedQuestions]);
+
+                this.currentIndex = 0;
+                this.score = 0;
+                this.answers = new Array(this.currentQuestions.length).fill(null);
+
+                document.getElementById('startScreen').classList.add('hidden');
+                document.getElementById('quizScreen').classList.remove('hidden');
+                document.getElementById('resultScreen').classList.add('hidden');
+
+                this.displayQuestion();
+            }
+
+            shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            renderQuestionGrid() {
+                const grid = document.getElementById('questionGrid');
+                grid.innerHTML = '';
+                
+                this.currentQuestions.forEach((q, index) => {
+                    const cell = document.createElement('div');
+                    cell.className = 'grid-cell';
+                    cell.textContent = index + 1;
+                    cell.dataset.index = index;
+                    cell.title = `${q.sourceLabel || 'Đề ôn tập gốc'} - Câu ${q.id}`;
+                    
+                    if (index === this.currentIndex) {
+                        cell.classList.add('current');
+                    }
+                    
+                    if (this.answers[index] !== null) {
+                        const isCorrect = this.answers[index] === this.currentQuestions[index].answer;
+                        cell.classList.add(isCorrect ? 'correct' : 'wrong');
+                    }
+                    
+                    cell.addEventListener('click', () => {
+                        this.currentIndex = index;
+                        this.displayQuestion();
+                    });
+                    
+                    grid.appendChild(cell);
+                });
+            }
+
+            displayQuestion() {
+                const question = this.currentQuestions[this.currentIndex];
+                const total = this.currentQuestions.length;
+
+                this.renderQuestionGrid();
+
+                document.getElementById('questionNumber').textContent = `Câu ${this.currentIndex + 1}`;
+                const sourceBadge = document.getElementById('questionSource');
+                sourceBadge.textContent = question.sourceLabel || 'Đề ôn tập gốc';
+                sourceBadge.className = `source-badge ${question.source === 'suggested' ? 'suggested' : 'original'}`;
+                document.getElementById('questionText').textContent = question.question;
+
+                const optionsContainer = document.getElementById('optionsContainer');
+                optionsContainer.innerHTML = '';
+
+                const savedAnswer = this.answers[this.currentIndex];
+
+                Object.entries(question.options).forEach(([key, value]) => {
+                    const option = document.createElement('div');
+                    option.className = 'option';
+                    option.dataset.key = key;
+
+                    if (savedAnswer !== null) {
+                        option.classList.add('disabled');
+                        if (key === question.answer) {
+                            option.classList.add('correct');
+                        }
+                        if (savedAnswer === key && savedAnswer !== question.answer) {
+                            option.classList.add('wrong');
+                        }
+                    }
+
+                    option.innerHTML = `
+                        <span class="option-key">${key}</span>
+                        <span class="option-text">${value}</span>
+                    `;
+
+                    if (savedAnswer === null) {
+                        option.addEventListener('click', () => this.selectAnswer(key));
+                    }
+
+                    optionsContainer.appendChild(option);
+                });
+
+                // Update navigation buttons
+                document.getElementById('prevBtn').disabled = this.currentIndex === 0;
+                
+                const nextBtn = document.getElementById('nextBtn');
+                if (this.currentIndex === total - 1) {
+                    nextBtn.textContent = 'Hoàn thành ✓';
+                } else {
+                    nextBtn.textContent = 'Tiếp theo →';
+                }
+            }
+
+            selectAnswer(key) {
+                const question = this.currentQuestions[this.currentIndex];
+                this.answers[this.currentIndex] = key;
+
+                if (key === question.answer) {
+                    this.score++;
+                }
+
+                this.displayQuestion();
+            }
+
+            previousQuestion() {
+                if (this.currentIndex > 0) {
+                    this.currentIndex--;
+                    this.displayQuestion();
+                }
+            }
+
+            nextQuestion() {
+                if (this.currentIndex < this.currentQuestions.length - 1) {
+                    this.currentIndex++;
+                    this.displayQuestion();
+                } else {
+                    this.showResult();
+                }
+            }
+
+            showResult() {
+                document.getElementById('quizScreen').classList.add('hidden');
+                document.getElementById('resultScreen').classList.remove('hidden');
+
+                const total = this.currentQuestions.length;
+                const correct = this.score;
+                const wrong = total - correct;
+                const percent = Math.round((correct / total) * 100);
+
+                document.getElementById('finalScore').textContent = correct;
+                document.getElementById('totalQuestions').textContent = `/ ${total} câu`;
+                document.getElementById('correctCount').textContent = correct;
+                document.getElementById('wrongCount').textContent = wrong;
+                document.getElementById('percentScore').textContent = `${percent}%`;
+
+                let message, detail;
+                if (percent >= 90) {
+                    message = 'Xuất sắc!';
+                    detail = 'Bạn đã nắm vững kiến thức rất tốt!';
+                } else if (percent >= 70) {
+                    message = 'Tốt lắm!';
+                    detail = 'Bạn đã hiểu phần lớn nội dung.';
+                } else if (percent >= 50) {
+                    message = 'Cần ôn thêm';
+                    detail = 'Hãy xem lại các câu sai và ôn tập thêm nhé!';
+                } else {
+                    message = 'Cố gắng lên!';
+                    detail = 'Đừng nản, hãy ôn tập kỹ hơn và thử lại!';
+                }
+
+                document.getElementById('resultMessage').textContent = message;
+                document.getElementById('resultDetail').textContent = detail;
+
+                document.getElementById('reviewList').classList.add('hidden');
+                document.getElementById('filterTabs').classList.add('hidden');
+                document.getElementById('reviewBtn').textContent = 'Xem lại đáp án';
+
+                if (correct === total && total > 0) {
+                    document.getElementById('perfectTitle').textContent = `Tuyệt vời! ${correct}/${total}`;
+                    setTimeout(() => {
+                        document.getElementById('donateModal').classList.remove('hidden');
+                    }, 500);
+                }
+            }
+
+            toggleReview() {
+                const reviewList = document.getElementById('reviewList');
+                const filterTabs = document.getElementById('filterTabs');
+                const reviewBtn = document.getElementById('reviewBtn');
+
+                if (reviewList.classList.contains('hidden')) {
+                    this.renderReview();
+                    reviewList.classList.remove('hidden');
+                    filterTabs.classList.remove('hidden');
+                    reviewBtn.textContent = '✕ Ẩn đáp án';
+                } else {
+                    reviewList.classList.add('hidden');
+                    filterTabs.classList.add('hidden');
+                    reviewBtn.textContent = 'Xem lại đáp án';
+                }
+            }
+
+            renderReview() {
+                const reviewList = document.getElementById('reviewList');
+                reviewList.innerHTML = '';
+
+                this.currentQuestions.forEach((question, index) => {
+                    const userAnswer = this.answers[index];
+                    const isCorrect = userAnswer === question.answer;
+
+                    // Filter logic
+                    if (this.reviewFilter === 'wrong' && isCorrect) return;
+                    if (this.reviewFilter === 'correct' && !isCorrect) return;
+
+                    const card = document.createElement('div');
+                    card.className = `review-card ${isCorrect ? 'is-correct' : 'incorrect'}`;
+                    const sourceClass = question.source === 'suggested' ? 'suggested' : 'original';
+                    const sourceLabel = question.sourceLabel || 'Đề ôn tập gốc';
+
+                    card.innerHTML = `
+                        <div class="review-header">
+                            <div>
+                                <span class="question-number">Câu ${question.id}</span>
+                                <span class="source-badge ${sourceClass}">${sourceLabel}</span>
+                            </div>
+                            <span class="review-status ${isCorrect ? 'correct' : 'wrong'}">
+                                ${isCorrect ? '✓ Đúng' : '✗ Sai'}
+                            </span>
+                        </div>
+                        <div class="review-question">${question.question}</div>
+                        <div class="review-answer">
+                            ${!isCorrect ? `<div style="margin-bottom: 4px">Bạn chọn: <span class="your-answer">${userAnswer || 'Chưa trả lời'}${userAnswer ? ' - ' + question.options[userAnswer] : ''}</span></div>` : ''}
+                            <div>Đáp án đúng: <span>${question.answer} - ${question.options[question.answer]}</span></div>
+                        </div>
+                    `;
+
+                    reviewList.appendChild(card);
+                });
+
+                if (reviewList.children.length === 0) {
+                    reviewList.innerHTML = '<p style="text-align: center; color: var(--text-secondary); padding: 20px;">Không có câu nào trong bộ lọc này.</p>';
+                }
+            }
+
+            restart() {
+                document.getElementById('resultScreen').classList.add('hidden');
+                document.getElementById('startScreen').classList.remove('hidden');
+                this.reviewFilter = 'all';
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+            }
+        }
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', () => {
+            new QuizApp();
+        });
+    </script>
+</body>
+</html>
