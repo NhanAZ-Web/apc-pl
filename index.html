@@ -285,6 +285,167 @@
             color: var(--white);
         }
 
+        /* Concepts Screen */
+        .concept-screen {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .concept-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .concept-title h2 {
+            color: var(--blue);
+            font-size: 1.35rem;
+            margin-bottom: 4px;
+        }
+
+        .concept-title p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .concept-toolbar {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .concept-search {
+            width: 100%;
+            border: 2px solid var(--blue);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+
+        .concept-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .concept-tab {
+            background: var(--white);
+            border: 2px solid var(--blue);
+            color: var(--blue);
+            padding: 8px 12px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .concept-tab:hover,
+        .concept-tab.active {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        .concept-section-title {
+            color: var(--blue);
+            font-size: 1.05rem;
+            margin: 20px 0 10px;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .concept-card {
+            border: 2px solid var(--blue);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            background: var(--white);
+        }
+
+        .concept-term {
+            color: var(--blue);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .concept-explain {
+            font-size: 0.92rem;
+            color: var(--black);
+            line-height: 1.55;
+            margin-bottom: 8px;
+        }
+
+        .concept-example {
+            font-size: 0.86rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            border-left: 3px solid var(--green);
+            padding-left: 10px;
+        }
+
+        .concept-example strong {
+            color: var(--green);
+        }
+
+        .concept-compare {
+            margin-top: 24px;
+            overflow-x: auto;
+        }
+
+        .concept-compare h3 {
+            color: var(--blue);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 680px;
+            background: var(--white);
+        }
+
+        .compare-table th,
+        .compare-table td {
+            border: 1px solid var(--blue);
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.45;
+            font-size: 0.88rem;
+        }
+
+        .compare-table th {
+            background: var(--blue);
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .concept-empty {
+            border: 2px solid var(--blue);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
         /* Quiz Layout */
         .quiz-layout {
             display: flex;
@@ -736,6 +897,20 @@
                 width: 100%;
             }
 
+            .concept-toolbar,
+            .concept-tabs {
+                flex-direction: column;
+            }
+
+            .concept-toolbar .nav-btn,
+            .concept-tab {
+                width: 100%;
+            }
+
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+
             .study-sidebar {
                 order: 1;
             }
@@ -937,10 +1112,28 @@
                 <span>Học bộ đề hoặc làm bài ngẫu nhiên</span>
             </div>
             <div class="start-actions">
+                <button class="start-btn secondary" id="conceptBtn">Khái niệm quan trọng</button>
                 <button class="start-btn secondary" id="studyBtn">Học bộ đề</button>
                 <button class="start-btn" id="startBtn">Bắt đầu làm bài</button>
             </div>
             <p class="disclaimer">Nội dung chỉ mang tính chất tham khảo. Đáp án được tự chọn để phục vụ ôn tập; người học nên đối chiếu thêm với tài liệu học phần khi cần.</p>
+        </div>
+
+        <!-- Concepts Screen -->
+        <div id="conceptScreen" class="hidden concept-screen">
+            <div class="concept-header">
+                <div class="concept-title">
+                    <h2>Khái Niệm Quan Trọng</h2>
+                    <p id="conceptSummary">Từ điển ôn thi theo chủ đề</p>
+                </div>
+                <div class="concept-toolbar">
+                    <button class="nav-btn" id="backFromConceptBtn">Quay lại</button>
+                    <button class="nav-btn primary" id="conceptQuizBtn">Làm trắc nghiệm</button>
+                </div>
+            </div>
+            <input class="concept-search" id="conceptSearch" type="search" placeholder="Tìm khái niệm, ví dụ: khách thể, hành pháp, dân sự, tham nhũng...">
+            <div class="concept-tabs" id="conceptTabs"></div>
+            <div id="conceptList"></div>
         </div>
 
         <!-- Study Screen -->
@@ -1044,6 +1237,537 @@
     </div>
 
     <script>
+        const CONCEPT_SECTIONS = [
+            {
+                id: 'state',
+                title: 'Nhà nước và bộ máy nhà nước',
+                terms: [
+                    {
+                        term: 'Nhà nước Cộng hòa xã hội chủ nghĩa Việt Nam',
+                        explain: 'Nhà nước của Nhân dân, do Nhân dân, vì Nhân dân. Quyền lực nhà nước thuộc về Nhân dân và được thực hiện thông qua các cơ quan nhà nước.',
+                        example: 'Khi công dân bầu đại biểu Quốc hội, đó là một cách Nhân dân trao quyền đại diện để thực hiện quyền lực nhà nước.'
+                    },
+                    {
+                        term: 'Quyền lực nhà nước',
+                        explain: 'Quyền lực tổ chức và quản lý xã hội bằng pháp luật. Ở Việt Nam, quyền lực nhà nước có sự phân công, phối hợp và kiểm soát giữa lập pháp, hành pháp, tư pháp.',
+                        example: 'Quốc hội làm luật, Chính phủ tổ chức thi hành luật, Tòa án xét xử khi có tranh chấp hoặc tội phạm.'
+                    },
+                    {
+                        term: 'Lập pháp',
+                        explain: 'Hoạt động làm luật. Cơ quan thực hiện quyền lập hiến, lập pháp là Quốc hội.',
+                        example: 'Quốc hội ban hành Bộ luật Lao động, Bộ luật Dân sự, Bộ luật Hình sự.'
+                    },
+                    {
+                        term: 'Hành pháp',
+                        explain: 'Hoạt động tổ chức thi hành Hiến pháp, luật và quản lý nhà nước. Cơ quan thực hiện quyền hành pháp là Chính phủ.',
+                        example: 'Chính phủ ban hành nghị định để hướng dẫn thi hành luật.'
+                    },
+                    {
+                        term: 'Tư pháp',
+                        explain: 'Hoạt động xét xử, bảo vệ công lý, quyền con người, quyền công dân. Cơ quan thực hiện quyền tư pháp là Tòa án nhân dân.',
+                        example: 'Tòa án xét xử vụ án hình sự hoặc giải quyết tranh chấp dân sự.'
+                    },
+                    {
+                        term: 'Quốc hội',
+                        explain: 'Cơ quan đại biểu cao nhất của Nhân dân và là cơ quan quyền lực nhà nước cao nhất. Quốc hội ban hành Hiến pháp, luật và quyết định các vấn đề quan trọng của đất nước.',
+                        example: 'Câu hỏi có chữ lập hiến, lập pháp thì thường nghĩ đến Quốc hội.'
+                    },
+                    {
+                        term: 'Hội đồng nhân dân',
+                        explain: 'Cơ quan quyền lực nhà nước ở địa phương, đại diện cho ý chí, nguyện vọng và quyền làm chủ của Nhân dân địa phương.',
+                        example: 'Quốc hội và Hội đồng nhân dân các cấp đều là cơ quan quyền lực nhà nước.'
+                    },
+                    {
+                        term: 'Chủ tịch nước',
+                        explain: 'Người đứng đầu Nhà nước, thay mặt nước Cộng hòa xã hội chủ nghĩa Việt Nam về đối nội và đối ngoại.',
+                        example: 'Đừng nhầm Chủ tịch nước với người đứng đầu Chính phủ.'
+                    },
+                    {
+                        term: 'Chính phủ',
+                        explain: 'Cơ quan hành chính nhà nước cao nhất, thực hiện quyền hành pháp và tổ chức thi hành pháp luật.',
+                        example: 'Câu hỏi hỏi cơ quan hành pháp hoặc hành chính cao nhất thì chọn Chính phủ.'
+                    },
+                    {
+                        term: 'Thủ tướng Chính phủ',
+                        explain: 'Người đứng đầu Chính phủ, lãnh đạo hoạt động của Chính phủ và hệ thống hành chính nhà nước.',
+                        example: 'Hỏi ai đứng đầu Chính phủ thì là Thủ tướng Chính phủ.'
+                    },
+                    {
+                        term: 'Ủy ban nhân dân',
+                        explain: 'Cơ quan hành chính nhà nước ở địa phương, tổ chức thi hành Hiến pháp, luật và văn bản của cơ quan nhà nước cấp trên tại địa phương.',
+                        example: 'Đăng ký khai sinh, đăng ký kết hôn tại UBND thường thuộc nhóm quản lý hành chính nhà nước.'
+                    },
+                    {
+                        term: 'Tòa án nhân dân',
+                        explain: 'Cơ quan xét xử của nước Cộng hòa xã hội chủ nghĩa Việt Nam.',
+                        example: 'Câu hỏi hỏi cơ quan xét xử thì chọn Tòa án nhân dân.'
+                    },
+                    {
+                        term: 'Viện kiểm sát nhân dân',
+                        explain: 'Cơ quan thực hành quyền công tố và kiểm sát hoạt động tư pháp.',
+                        example: 'Đừng nhầm Viện kiểm sát với Tòa án: Viện kiểm sát không phải cơ quan xét xử.'
+                    }
+                ],
+                comparisons: [
+                    {
+                        title: 'So sánh nhanh các cơ quan nhà nước dễ nhầm',
+                        columns: ['Khái niệm', 'Vai trò chính', 'Từ khóa nhận diện'],
+                        rows: [
+                            ['Quốc hội', 'Cơ quan quyền lực nhà nước cao nhất; lập hiến, lập pháp', 'Lập pháp, ban hành Hiến pháp, ban hành luật'],
+                            ['Chính phủ', 'Cơ quan hành chính nhà nước cao nhất; thực hiện hành pháp', 'Hành pháp, quản lý nhà nước, nghị định'],
+                            ['Tòa án nhân dân', 'Cơ quan xét xử; thực hiện quyền tư pháp', 'Xét xử, bản án, tội phạm, tranh chấp'],
+                            ['Viện kiểm sát nhân dân', 'Thực hành quyền công tố và kiểm sát hoạt động tư pháp', 'Công tố, kiểm sát tư pháp']
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'law-system',
+                title: 'Pháp luật và hệ thống pháp luật',
+                terms: [
+                    {
+                        term: 'Pháp luật',
+                        explain: 'Hệ thống quy tắc xử sự chung do Nhà nước ban hành hoặc thừa nhận, có tính bắt buộc chung và được Nhà nước bảo đảm thực hiện.',
+                        example: 'Luật giao thông quy định người đi xe máy phải đội mũ bảo hiểm.'
+                    },
+                    {
+                        term: 'Quy phạm pháp luật',
+                        explain: 'Một quy tắc xử sự chung. Quy phạm thường có ba phần: giả định, quy định, chế tài.',
+                        example: 'Nếu điều khiển xe máy không đội mũ bảo hiểm thì bị xử phạt tiền.'
+                    },
+                    {
+                        term: 'Giả định',
+                        explain: 'Phần nêu hoàn cảnh, điều kiện hoặc chủ thể mà quy phạm áp dụng.',
+                        example: 'Người điều khiển xe máy tham gia giao thông là phần hoàn cảnh/chủ thể.'
+                    },
+                    {
+                        term: 'Quy định',
+                        explain: 'Phần nêu chủ thể được làm gì, phải làm gì hoặc không được làm gì.',
+                        example: 'Phải đội mũ bảo hiểm là phần quy định.'
+                    },
+                    {
+                        term: 'Chế tài',
+                        explain: 'Phần nêu hậu quả pháp lý khi chủ thể không thực hiện đúng quy định.',
+                        example: 'Bị phạt tiền khi vi phạm là phần chế tài.'
+                    },
+                    {
+                        term: 'Chế định pháp luật',
+                        explain: 'Nhóm quy phạm pháp luật điều chỉnh một nhóm quan hệ xã hội cùng loại trong một ngành luật.',
+                        example: 'Chế định hợp đồng thuộc luật dân sự; chế định tiền lương thuộc luật lao động.'
+                    },
+                    {
+                        term: 'Ngành luật',
+                        explain: 'Tập hợp quy phạm pháp luật điều chỉnh một lĩnh vực quan hệ xã hội nhất định bằng phương pháp điều chỉnh đặc trưng.',
+                        example: 'Luật dân sự, luật lao động, luật hành chính, luật hình sự.'
+                    },
+                    {
+                        term: 'Văn bản quy phạm pháp luật',
+                        explain: 'Văn bản chứa quy tắc xử sự chung, có hiệu lực bắt buộc chung và được áp dụng nhiều lần.',
+                        example: 'Hiến pháp, luật, nghị định, thông tư là các dạng văn bản quy phạm pháp luật.'
+                    },
+                    {
+                        term: 'Hiến pháp',
+                        explain: 'Luật cơ bản của Nhà nước, có hiệu lực pháp lý cao nhất trong hệ thống pháp luật.',
+                        example: 'Mọi văn bản pháp luật khác phải phù hợp với Hiến pháp.'
+                    }
+                ],
+                comparisons: [
+                    {
+                        title: 'Ba bộ phận của quy phạm pháp luật',
+                        columns: ['Bộ phận', 'Trả lời câu hỏi', 'Ví dụ nhớ nhanh'],
+                        rows: [
+                            ['Giả định', 'Khi nào? Ai? Trong hoàn cảnh nào?', 'Người điều khiển xe máy khi tham gia giao thông'],
+                            ['Quy định', 'Được làm gì, phải làm gì, không được làm gì?', 'Phải đội mũ bảo hiểm'],
+                            ['Chế tài', 'Vi phạm thì bị gì?', 'Bị xử phạt tiền']
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'constitution',
+                title: 'Hiến pháp và quyền cơ bản',
+                terms: [
+                    {
+                        term: 'Quyền con người',
+                        explain: 'Quyền tự nhiên, vốn có của mỗi người, được Hiến pháp và pháp luật ghi nhận, bảo vệ.',
+                        example: 'Quyền sống, quyền bất khả xâm phạm về thân thể.'
+                    },
+                    {
+                        term: 'Quyền công dân',
+                        explain: 'Quyền gắn với người có quốc tịch Việt Nam.',
+                        example: 'Quyền bầu cử, quyền ứng cử là quyền của công dân.'
+                    },
+                    {
+                        term: 'Quyền chính trị',
+                        explain: 'Nhóm quyền liên quan đến việc tham gia quản lý nhà nước, xã hội và đời sống chính trị.',
+                        example: 'Quyền bầu cử, ứng cử, tham gia quản lý nhà nước.'
+                    },
+                    {
+                        term: 'Quyền dân chủ',
+                        explain: 'Nhóm quyền giúp công dân tham gia, giám sát, phản ánh ý kiến trong đời sống xã hội.',
+                        example: 'Quyền khiếu nại, tố cáo, tự do ngôn luận theo quy định pháp luật.'
+                    },
+                    {
+                        term: 'Quyền tự do nhân thân',
+                        explain: 'Nhóm quyền gắn trực tiếp với thân thể, danh dự, đời sống riêng tư và tự do cá nhân.',
+                        example: 'Quyền tự do đi lại, cư trú; quyền bất khả xâm phạm về thân thể.'
+                    },
+                    {
+                        term: 'Quyền bầu cử',
+                        explain: 'Quyền lựa chọn người đại diện vào cơ quan quyền lực nhà nước. Công dân đủ 18 tuổi trở lên có quyền bầu cử theo luật định.',
+                        example: 'Đủ 18 tuổi được đi bầu cử nếu không thuộc trường hợp pháp luật hạn chế.'
+                    },
+                    {
+                        term: 'Quyền ứng cử',
+                        explain: 'Quyền tự mình ra ứng cử làm đại biểu Quốc hội hoặc Hội đồng nhân dân. Công dân đủ 21 tuổi trở lên có quyền ứng cử theo luật định.',
+                        example: 'Câu hỏi về tuổi ứng cử thường là 21 tuổi.'
+                    }
+                ],
+                comparisons: [
+                    {
+                        title: 'Quyền bầu cử và quyền ứng cử',
+                        columns: ['Quyền', 'Dễ hiểu là', 'Mốc tuổi hay gặp'],
+                        rows: [
+                            ['Bầu cử', 'Đi chọn người đại diện', 'Đủ 18 tuổi'],
+                            ['Ứng cử', 'Tự mình ra làm ứng viên đại biểu', 'Đủ 21 tuổi']
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'civil',
+                title: 'Pháp luật dân sự',
+                terms: [
+                    {
+                        term: 'Luật dân sự',
+                        explain: 'Ngành luật điều chỉnh quan hệ tài sản và quan hệ nhân thân giữa các chủ thể bình đẳng, độc lập về tài sản và tự chịu trách nhiệm.',
+                        example: 'Bồi thường thiệt hại, hợp đồng mua bán, quyền sở hữu tài sản.'
+                    },
+                    {
+                        term: 'Quan hệ tài sản',
+                        explain: 'Quan hệ liên quan đến tài sản, tiền, quyền tài sản hoặc nghĩa vụ tài sản.',
+                        example: 'A vay tiền B, A bán xe cho B.'
+                    },
+                    {
+                        term: 'Quan hệ nhân thân',
+                        explain: 'Quan hệ gắn với giá trị tinh thần của cá nhân, tổ chức; có thể liên quan hoặc không liên quan đến tài sản.',
+                        example: 'Danh dự, nhân phẩm, uy tín bị xâm phạm.'
+                    },
+                    {
+                        term: 'Phương pháp bình đẳng, thỏa thuận',
+                        explain: 'Các bên trong quan hệ dân sự bình đẳng, tự nguyện thỏa thuận và tự chịu trách nhiệm.',
+                        example: 'Hai bên tự thỏa thuận giá mua bán, thời hạn thanh toán trong hợp đồng.'
+                    },
+                    {
+                        term: 'Chủ thể dân sự',
+                        explain: 'Cá nhân, pháp nhân tham gia quan hệ dân sự, có quyền và nghĩa vụ dân sự.',
+                        example: 'Cá nhân A ký hợp đồng thuê nhà với Công ty B.'
+                    },
+                    {
+                        term: 'Quyền sở hữu',
+                        explain: 'Quyền của chủ sở hữu đối với tài sản, gồm quyền chiếm hữu, quyền sử dụng và quyền định đoạt.',
+                        example: 'Chủ xe có thể giữ xe, sử dụng xe, bán hoặc tặng cho xe.'
+                    },
+                    {
+                        term: 'Quyền chiếm hữu',
+                        explain: 'Quyền nắm giữ, quản lý tài sản.',
+                        example: 'Bạn đang giữ chiếc laptop của mình.'
+                    },
+                    {
+                        term: 'Quyền sử dụng',
+                        explain: 'Quyền khai thác công dụng, hưởng hoa lợi, lợi tức từ tài sản.',
+                        example: 'Dùng xe để đi học, dùng nhà để ở hoặc cho thuê.'
+                    },
+                    {
+                        term: 'Quyền định đoạt',
+                        explain: 'Quyền chuyển giao, từ bỏ, tiêu dùng hoặc tiêu hủy tài sản theo quy định.',
+                        example: 'Bán xe, tặng điện thoại, cho người khác tài sản.'
+                    },
+                    {
+                        term: 'Quyền hưởng dụng',
+                        explain: 'Quyền khai thác công dụng, hưởng hoa lợi, lợi tức từ tài sản thuộc sở hữu của người khác trong một thời hạn nhất định.',
+                        example: 'Một người được quyền khai thác vườn cây của người khác trong 5 năm và hưởng trái cây thu hoạch.'
+                    },
+                    {
+                        term: 'Quyền bề mặt',
+                        explain: 'Quyền của một chủ thể đối với mặt đất, mặt nước, khoảng không gian trên mặt đất, mặt nước và lòng đất mà quyền sử dụng đất thuộc về chủ thể khác.',
+                        example: 'Có quyền xây dựng công trình trên phần đất mà quyền sử dụng đất thuộc người khác theo thỏa thuận.'
+                    },
+                    {
+                        term: 'Quyền đối với bất động sản liền kề',
+                        explain: 'Quyền được thực hiện trên một bất động sản để phục vụ việc khai thác bất động sản khác thuộc quyền sở hữu của mình.',
+                        example: 'Quyền về lối đi qua thửa đất liền kề khi bất động sản bị vây bọc.'
+                    },
+                    {
+                        term: 'Hợp đồng dân sự',
+                        explain: 'Sự thỏa thuận giữa các bên về việc xác lập, thay đổi hoặc chấm dứt quyền, nghĩa vụ dân sự.',
+                        example: 'Hợp đồng mua bán xe, hợp đồng thuê nhà.'
+                    },
+                    {
+                        term: 'Bồi thường thiệt hại ngoài hợp đồng',
+                        explain: 'Trách nhiệm bồi thường phát sinh khi một người có hành vi trái pháp luật gây thiệt hại cho người khác ngoài quan hệ hợp đồng.',
+                        example: 'Đi xe bất cẩn làm người khác bị thương thì phải bồi thường.'
+                    }
+                ],
+                comparisons: [
+                    {
+                        title: 'Quyền sở hữu và quyền khác đối với tài sản',
+                        columns: ['Nhóm quyền', 'Gồm những gì', 'Mẹo nhớ'],
+                        rows: [
+                            ['Quyền sở hữu', 'Chiếm hữu, sử dụng, định đoạt', 'Tài sản của mình'],
+                            ['Quyền khác đối với tài sản', 'Hưởng dụng, bề mặt, quyền đối với bất động sản liền kề', 'Tài sản/đất có liên quan đến người khác']
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'labor-admin',
+                title: 'Lao động và hành chính',
+                terms: [
+                    {
+                        term: 'Luật lao động',
+                        explain: 'Ngành luật điều chỉnh quan hệ lao động giữa người lao động, người sử dụng lao động và các quan hệ liên quan trực tiếp đến lao động.',
+                        example: 'Hợp đồng lao động, tiền lương, thời giờ làm việc, kỷ luật lao động.'
+                    },
+                    {
+                        term: 'Người lao động',
+                        explain: 'Người làm việc cho người sử dụng lao động theo thỏa thuận, được trả lương và chịu sự quản lý, điều hành.',
+                        example: 'Nhân viên ký hợp đồng làm việc tại công ty.'
+                    },
+                    {
+                        term: 'Người sử dụng lao động',
+                        explain: 'Cá nhân, tổ chức thuê mướn, sử dụng lao động và trả lương cho người lao động.',
+                        example: 'Công ty tuyển nhân viên làm việc.'
+                    },
+                    {
+                        term: 'Hợp đồng lao động',
+                        explain: 'Sự thỏa thuận về việc làm có trả lương, điều kiện làm việc, quyền và nghĩa vụ của mỗi bên trong quan hệ lao động.',
+                        example: 'Hợp đồng lao động xác định thời hạn 24 tháng.'
+                    },
+                    {
+                        term: 'Tiền lương',
+                        explain: 'Khoản tiền người sử dụng lao động trả cho người lao động theo thỏa thuận để thực hiện công việc.',
+                        example: 'Lương theo tháng, lương theo giờ, phụ cấp nếu có.'
+                    },
+                    {
+                        term: 'Bảo hiểm xã hội bắt buộc',
+                        explain: 'Loại bảo hiểm xã hội mà người lao động và người sử dụng lao động thuộc diện luật định phải tham gia.',
+                        example: 'Thường gồm ốm đau, thai sản, tai nạn lao động bệnh nghề nghiệp, hưu trí, tử tuất.'
+                    },
+                    {
+                        term: 'Bảo hiểm xã hội tự nguyện',
+                        explain: 'Loại bảo hiểm xã hội do người dân tự nguyện tham gia, thường tập trung vào hưu trí và tử tuất.',
+                        example: 'Người lao động tự do tham gia để có chế độ hưu trí.'
+                    },
+                    {
+                        term: 'Kỷ luật lao động',
+                        explain: 'Quy định về việc tuân theo thời gian, công nghệ, điều hành sản xuất kinh doanh trong nội quy lao động.',
+                        example: 'Đi làm đúng giờ, không tự ý bỏ việc, tuân thủ an toàn lao động.'
+                    },
+                    {
+                        term: 'Luật hành chính',
+                        explain: 'Ngành luật điều chỉnh quan hệ phát sinh trong hoạt động quản lý hành chính nhà nước.',
+                        example: 'Cấp giấy khai sinh, xử phạt vi phạm giao thông.'
+                    },
+                    {
+                        term: 'Vi phạm hành chính',
+                        explain: 'Hành vi có lỗi, vi phạm quy định quản lý nhà nước, không phải tội phạm và theo pháp luật phải bị xử phạt vi phạm hành chính.',
+                        example: 'Vượt đèn đỏ, không đội mũ bảo hiểm khi đi xe máy.'
+                    },
+                    {
+                        term: 'Xử phạt vi phạm hành chính',
+                        explain: 'Việc cơ quan có thẩm quyền áp dụng hình thức xử phạt đối với cá nhân, tổ chức vi phạm hành chính.',
+                        example: 'Cảnh cáo, phạt tiền, tước quyền sử dụng giấy phép có thời hạn.'
+                    }
+                ],
+                comparisons: [
+                    {
+                        title: 'Dân sự, lao động, hành chính, hình sự phân biệt thế nào?',
+                        columns: ['Ngành luật', 'Nhìn vào đâu để nhận ra', 'Ví dụ'],
+                        rows: [
+                            ['Dân sự', 'Bình đẳng, tài sản, nhân thân, bồi thường, hợp đồng', 'A làm B bị thương, B kiện yêu cầu bồi thường'],
+                            ['Lao động', 'Người lao động, người sử dụng lao động, lương, hợp đồng lao động', 'Công ty huy động làm thêm giờ'],
+                            ['Hành chính', 'Quản lý nhà nước, cấp giấy tờ, xử phạt hành chính', 'UBND cấp giấy khai sinh; CSGT phạt vượt đèn đỏ'],
+                            ['Hình sự', 'Tội phạm, hình phạt, cấu thành tội phạm', 'Dùng dao đâm người gây chết người']
+                        ]
+                    },
+                    {
+                        title: 'Bảo hiểm xã hội bắt buộc và tự nguyện',
+                        columns: ['Loại', 'Đặc điểm', 'Chế độ hay gặp trong đề'],
+                        rows: [
+                            ['Bắt buộc', 'Áp dụng với nhóm người lao động thuộc diện luật định', 'Ốm đau, thai sản, tai nạn lao động bệnh nghề nghiệp, hưu trí, tử tuất'],
+                            ['Tự nguyện', 'Người tham gia tự nguyện đóng', 'Hưu trí, tử tuất']
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'criminal',
+                title: 'Pháp luật hình sự',
+                terms: [
+                    {
+                        term: 'Luật hình sự',
+                        explain: 'Ngành luật quy định tội phạm và hình phạt đối với người phạm tội.',
+                        example: 'Tội giết người, tội trộm cắp tài sản, hình phạt tù.'
+                    },
+                    {
+                        term: 'Tội phạm',
+                        explain: 'Hành vi nguy hiểm cho xã hội được quy định trong Bộ luật Hình sự, do người có năng lực trách nhiệm hình sự thực hiện có lỗi.',
+                        example: 'Cố ý gây thương tích, giết người, lừa đảo chiếm đoạt tài sản.'
+                    },
+                    {
+                        term: 'Cấu thành tội phạm',
+                        explain: 'Bộ bốn yếu tố để nhận diện một tội phạm: khách thể, mặt khách quan, chủ thể, mặt chủ quan.',
+                        example: 'Đề hay hỏi từng yếu tố này dưới dạng định nghĩa.'
+                    },
+                    {
+                        term: 'Khách thể của tội phạm',
+                        explain: 'Quan hệ xã hội được luật hình sự bảo vệ và bị tội phạm xâm hại.',
+                        example: 'Tội giết người xâm hại quan hệ xã hội bảo vệ tính mạng con người.'
+                    },
+                    {
+                        term: 'Mặt khách quan của tội phạm',
+                        explain: 'Những biểu hiện bên ngoài của tội phạm như hành vi, hậu quả, quan hệ nhân quả, công cụ, thời gian, địa điểm.',
+                        example: 'Dùng dao đâm, hậu quả nạn nhân tử vong, quan hệ nhân quả giữa hành vi đâm và hậu quả.'
+                    },
+                    {
+                        term: 'Chủ thể của tội phạm',
+                        explain: 'Người thực hiện hành vi phạm tội, có năng lực trách nhiệm hình sự và đạt độ tuổi luật định.',
+                        example: 'Người đủ tuổi chịu trách nhiệm hình sự, không mất năng lực nhận thức khi phạm tội.'
+                    },
+                    {
+                        term: 'Mặt chủ quan của tội phạm',
+                        explain: 'Diễn biến tâm lý bên trong của người phạm tội, gồm lỗi, động cơ và mục đích phạm tội.',
+                        example: 'Có muốn hậu quả xảy ra không, có bỏ mặc hậu quả không.'
+                    },
+                    {
+                        term: 'Lỗi cố ý trực tiếp',
+                        explain: 'Người phạm tội thấy trước hậu quả và mong muốn hậu quả xảy ra.',
+                        example: 'A đâm nhiều nhát vào vùng nguy hiểm với mục đích làm B chết.'
+                    },
+                    {
+                        term: 'Lỗi cố ý gián tiếp',
+                        explain: 'Người phạm tội thấy trước hậu quả có thể xảy ra, không mong muốn nhưng có ý thức bỏ mặc.',
+                        example: 'Biết hành vi có thể gây chết người nhưng vẫn làm và mặc kệ hậu quả.'
+                    },
+                    {
+                        term: 'Lỗi vô ý vì quá tự tin',
+                        explain: 'Người phạm tội thấy trước hậu quả có thể xảy ra nhưng tin rằng hậu quả sẽ không xảy ra hoặc có thể ngăn ngừa.',
+                        example: 'Lái xe quá tốc độ, biết nguy hiểm nhưng tin mình xử lý được.'
+                    },
+                    {
+                        term: 'Lỗi vô ý do cẩu thả',
+                        explain: 'Người phạm tội không thấy trước hậu quả mặc dù phải thấy trước và có thể thấy trước.',
+                        example: 'Tiêm nhầm thuốc do không kiểm tra nhãn thuốc dù có nghĩa vụ kiểm tra.'
+                    },
+                    {
+                        term: 'Hình phạt chính',
+                        explain: 'Hình phạt được tuyên độc lập đối với người phạm tội.',
+                        example: 'Phạt tiền, cải tạo không giam giữ, tù có thời hạn, tù chung thân, tử hình.'
+                    },
+                    {
+                        term: 'Hình phạt bổ sung',
+                        explain: 'Hình phạt có thể áp dụng kèm theo hình phạt chính.',
+                        example: 'Cấm đảm nhiệm chức vụ, cấm hành nghề, tước một số quyền công dân.'
+                    }
+                ],
+                comparisons: [
+                    {
+                        title: 'Bốn yếu tố cấu thành tội phạm',
+                        columns: ['Yếu tố', 'Hiểu nhanh', 'Từ khóa đề hay dùng'],
+                        rows: [
+                            ['Khách thể', 'Cái bị xâm hại', 'Quan hệ xã hội được luật hình sự bảo vệ'],
+                            ['Mặt khách quan', 'Biểu hiện bên ngoài', 'Hành vi, hậu quả, quan hệ nhân quả'],
+                            ['Chủ thể', 'Người phạm tội', 'Năng lực trách nhiệm hình sự, độ tuổi luật định'],
+                            ['Mặt chủ quan', 'Tâm lý bên trong', 'Lỗi, động cơ, mục đích']
+                        ]
+                    },
+                    {
+                        title: 'Bốn loại lỗi trong hình sự',
+                        columns: ['Loại lỗi', 'Thấy trước hậu quả?', 'Thái độ với hậu quả'],
+                        rows: [
+                            ['Cố ý trực tiếp', 'Có', 'Mong muốn xảy ra'],
+                            ['Cố ý gián tiếp', 'Có', 'Không mong muốn nhưng bỏ mặc'],
+                            ['Vô ý vì quá tự tin', 'Có', 'Tin là không xảy ra hoặc ngăn được'],
+                            ['Vô ý do cẩu thả', 'Không', 'Phải thấy trước và có thể thấy trước nhưng đã không thấy']
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'anti-corruption-consumer',
+                title: 'Phòng chống tham nhũng và người tiêu dùng',
+                terms: [
+                    {
+                        term: 'Tham nhũng',
+                        explain: 'Hành vi của người có chức vụ, quyền hạn đã lợi dụng chức vụ, quyền hạn đó vì vụ lợi.',
+                        example: 'Cán bộ lập chứng từ khống để chiếm đoạt tiền ngân sách.'
+                    },
+                    {
+                        term: 'Người có chức vụ, quyền hạn',
+                        explain: 'Người được giao thực hiện nhiệm vụ, công vụ và có quyền hạn nhất định trong cơ quan, tổ chức, đơn vị.',
+                        example: 'Giám đốc trung tâm y tế, kế toán được giao quản lý ngân sách.'
+                    },
+                    {
+                        term: 'Vụ lợi',
+                        explain: 'Lợi ích vật chất hoặc phi vật chất mà người có chức vụ, quyền hạn muốn đạt được trái pháp luật.',
+                        example: 'Chiếm đoạt tiền, nhận quà để làm sai nhiệm vụ.'
+                    },
+                    {
+                        term: 'Tham ô tài sản',
+                        explain: 'Lợi dụng chức vụ, quyền hạn chiếm đoạt tài sản mà mình có trách nhiệm quản lý.',
+                        example: 'Được giao thanh toán tiền công trình nhưng giữ lại một phần để tiêu xài.'
+                    },
+                    {
+                        term: 'Nhận hối lộ',
+                        explain: 'Người có chức vụ, quyền hạn nhận lợi ích để làm hoặc không làm một việc vì lợi ích của người đưa hối lộ.',
+                        example: 'Nhận tiền để bỏ qua sai phạm.'
+                    },
+                    {
+                        term: 'Nhũng nhiễu',
+                        explain: 'Cửa quyền, hách dịch, gây khó khăn, phiền hà khi thực hiện nhiệm vụ, công vụ nhằm vụ lợi.',
+                        example: 'Cố tình gây khó dễ khi làm thủ tục để người dân phải đưa tiền.'
+                    },
+                    {
+                        term: 'Người tiêu dùng',
+                        explain: 'Người mua, sử dụng sản phẩm, hàng hóa, dịch vụ cho mục đích tiêu dùng, sinh hoạt.',
+                        example: 'Mua tủ lạnh, mua thuốc, dùng dịch vụ vận chuyển.'
+                    },
+                    {
+                        term: 'Trách nhiệm cung cấp thông tin',
+                        explain: 'Tổ chức, cá nhân kinh doanh phải cung cấp thông tin chính xác, đầy đủ về hàng hóa, dịch vụ.',
+                        example: 'Bao thuốc lá ghi cảnh báo hút thuốc lá có hại cho sức khỏe.'
+                    },
+                    {
+                        term: 'Trách nhiệm cung cấp bằng chứng giao dịch',
+                        explain: 'Bên kinh doanh phải cung cấp hóa đơn, chứng từ hoặc bằng chứng giao dịch cho người tiêu dùng theo quy định.',
+                        example: 'Nhân viên giao tủ lạnh đưa hóa đơn mua hàng.'
+                    },
+                    {
+                        term: 'Thu hồi hàng hóa có khuyết tật',
+                        explain: 'Khi hàng hóa có lỗi có khả năng gây thiệt hại, bên kinh doanh phải thu hồi theo quy định.',
+                        example: 'Ô tô lỗi túi khí phải được thu hồi để xử lý.'
+                    },
+                    {
+                        term: 'Bảo hành hàng hóa',
+                        explain: 'Trách nhiệm sửa chữa, đổi, trả hoặc xử lý sản phẩm trong thời hạn bảo hành khi sản phẩm có lỗi thuộc phạm vi bảo hành.',
+                        example: 'Điện thoại lỗi phần cứng trong thời hạn bảo hành được sửa chữa theo chính sách.'
+                    }
+                ],
+                comparisons: [
+                    {
+                        title: 'Một số hành vi tham nhũng dễ gặp',
+                        columns: ['Khái niệm', 'Dễ hiểu là', 'Dấu hiệu nhận diện'],
+                        rows: [
+                            ['Tham ô', 'Lấy tài sản mình được giao quản lý', 'Có trách nhiệm quản lý tài sản rồi chiếm đoạt'],
+                            ['Nhận hối lộ', 'Nhận lợi ích để làm sai/làm theo yêu cầu', 'Có người đưa lợi ích để đổi lấy việc làm hoặc không làm'],
+                            ['Nhũng nhiễu', 'Gây khó dễ để vụ lợi', 'Cửa quyền, phiền hà, đòi hỏi lợi ích']
+                        ]
+                    }
+                ]
+            }
+        ];
+
         // Quiz Application
         class QuizApp {
             constructor() {
@@ -1056,6 +1780,9 @@
                 this.reviewFilter = 'all';
                 this.studyQuestions = [];
                 this.studiedQuestions = new Set();
+                this.conceptSections = CONCEPT_SECTIONS;
+                this.activeConceptSection = 'all';
+                this.conceptSearch = '';
                 
                 this.init();
             }
@@ -1092,9 +1819,24 @@
             bindEvents() {
                 // Start button
                 document.getElementById('startBtn').addEventListener('click', () => this.startQuiz());
+                document.getElementById('conceptBtn').addEventListener('click', () => this.openConceptMode());
                 document.getElementById('studyBtn').addEventListener('click', () => this.openStudyMode());
                 document.getElementById('backToStartBtn').addEventListener('click', () => this.showStartScreen());
                 document.getElementById('studyQuizBtn').addEventListener('click', () => this.startQuiz());
+                document.getElementById('backFromConceptBtn').addEventListener('click', () => this.showStartScreen());
+                document.getElementById('conceptQuizBtn').addEventListener('click', () => this.startQuiz());
+                document.getElementById('conceptSearch').addEventListener('input', (e) => {
+                    this.conceptSearch = e.target.value;
+                    this.renderConcepts();
+                });
+
+                document.getElementById('conceptTabs').addEventListener('click', (e) => {
+                    const tab = e.target.closest('.concept-tab');
+                    if (!tab) return;
+                    this.activeConceptSection = tab.dataset.section;
+                    this.renderConceptTabs();
+                    this.renderConcepts();
+                });
 
                 document.getElementById('studyList').addEventListener('click', (e) => {
                     const option = e.target.closest('.study-option.correct');
@@ -1165,6 +1907,7 @@
 
             hideAllScreens() {
                 document.getElementById('startScreen').classList.add('hidden');
+                document.getElementById('conceptScreen').classList.add('hidden');
                 document.getElementById('studyScreen').classList.add('hidden');
                 document.getElementById('quizScreen').classList.add('hidden');
                 document.getElementById('resultScreen').classList.add('hidden');
@@ -1182,6 +1925,153 @@
                 this.hideAllScreens();
                 document.getElementById('studyScreen').classList.remove('hidden');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            openConceptMode() {
+                this.renderConceptTabs();
+                this.renderConcepts();
+                this.hideAllScreens();
+                document.getElementById('conceptScreen').classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            normalizeText(text) {
+                return text
+                    .toLowerCase()
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '')
+                    .replace(/đ/g, 'd');
+            }
+
+            renderConceptTabs() {
+                const tabs = document.getElementById('conceptTabs');
+                const tabItems = [
+                    { id: 'all', title: 'Tất cả' },
+                    ...this.conceptSections.map(section => ({ id: section.id, title: section.title }))
+                ];
+
+                tabs.innerHTML = '';
+                tabItems.forEach((item) => {
+                    const button = document.createElement('button');
+                    button.className = `concept-tab ${item.id === this.activeConceptSection ? 'active' : ''}`;
+                    button.dataset.section = item.id;
+                    button.textContent = item.title;
+                    tabs.appendChild(button);
+                });
+            }
+
+            getVisibleConceptSections() {
+                const query = this.normalizeText(this.conceptSearch.trim());
+                const sections = this.activeConceptSection === 'all'
+                    ? this.conceptSections
+                    : this.conceptSections.filter(section => section.id === this.activeConceptSection);
+
+                if (!query) return sections;
+
+                return sections.map((section) => {
+                    const terms = section.terms.filter((item) => {
+                        const haystack = this.normalizeText(`${item.term} ${item.explain} ${item.example || ''}`);
+                        return haystack.includes(query);
+                    });
+
+                    const comparisons = section.comparisons.filter((table) => {
+                        const haystack = this.normalizeText(`${table.title} ${table.columns.join(' ')} ${table.rows.flat().join(' ')}`);
+                        return haystack.includes(query);
+                    });
+
+                    return { ...section, terms, comparisons };
+                }).filter(section => section.terms.length || section.comparisons.length);
+            }
+
+            renderConcepts() {
+                const list = document.getElementById('conceptList');
+                const sections = this.getVisibleConceptSections();
+                const totalTerms = sections.reduce((sum, section) => sum + section.terms.length, 0);
+                const totalTables = sections.reduce((sum, section) => sum + section.comparisons.length, 0);
+
+                document.getElementById('conceptSummary').textContent = `${totalTerms} khái niệm • ${totalTables} bảng so sánh`;
+                list.innerHTML = '';
+
+                if (!sections.length) {
+                    const empty = document.createElement('div');
+                    empty.className = 'concept-empty';
+                    empty.textContent = 'Không tìm thấy khái niệm phù hợp.';
+                    list.appendChild(empty);
+                    return;
+                }
+
+                sections.forEach((section) => {
+                    const heading = document.createElement('h3');
+                    heading.className = 'concept-section-title';
+                    heading.textContent = section.title;
+                    list.appendChild(heading);
+
+                    if (section.terms.length) {
+                        const grid = document.createElement('div');
+                        grid.className = 'concept-grid';
+
+                        section.terms.forEach((item) => {
+                            const card = document.createElement('article');
+                            card.className = 'concept-card';
+
+                            const term = document.createElement('div');
+                            term.className = 'concept-term';
+                            term.textContent = item.term;
+
+                            const explain = document.createElement('div');
+                            explain.className = 'concept-explain';
+                            explain.textContent = item.explain;
+
+                            card.append(term, explain);
+
+                            if (item.example) {
+                                const example = document.createElement('div');
+                                example.className = 'concept-example';
+                                example.innerHTML = `<strong>Ví dụ:</strong> ${item.example}`;
+                                card.appendChild(example);
+                            }
+
+                            grid.appendChild(card);
+                        });
+
+                        list.appendChild(grid);
+                    }
+
+                    section.comparisons.forEach((table) => {
+                        const wrapper = document.createElement('div');
+                        wrapper.className = 'concept-compare';
+
+                        const title = document.createElement('h3');
+                        title.textContent = table.title;
+
+                        const tableEl = document.createElement('table');
+                        tableEl.className = 'compare-table';
+
+                        const thead = document.createElement('thead');
+                        const headerRow = document.createElement('tr');
+                        table.columns.forEach((column) => {
+                            const th = document.createElement('th');
+                            th.textContent = column;
+                            headerRow.appendChild(th);
+                        });
+                        thead.appendChild(headerRow);
+
+                        const tbody = document.createElement('tbody');
+                        table.rows.forEach((row) => {
+                            const tr = document.createElement('tr');
+                            row.forEach((cell) => {
+                                const td = document.createElement('td');
+                                td.textContent = cell;
+                                tr.appendChild(td);
+                            });
+                            tbody.appendChild(tr);
+                        });
+
+                        tableEl.append(thead, tbody);
+                        wrapper.append(title, tableEl);
+                        list.appendChild(wrapper);
+                    });
+                });
             }
 
             updateStudySummary() {
