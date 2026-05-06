@@ -149,6 +149,16 @@
             background: var(--black);
         }
 
+        .start-btn:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        .start-btn:disabled:hover {
+            background: var(--white);
+            color: var(--blue);
+        }
+
         .start-actions {
             display: flex;
             justify-content: center;
@@ -165,6 +175,80 @@
         .start-btn.secondary:hover {
             background: var(--blue);
             color: var(--white);
+        }
+
+        .mistake-panel {
+            max-width: 780px;
+            margin: 24px auto 0;
+            padding: 16px;
+            border: 2px solid var(--blue);
+            border-radius: var(--radius-sm);
+            text-align: left;
+            background: var(--white);
+        }
+
+        .mistake-panel-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .mistake-panel h3 {
+            color: var(--blue);
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .mistake-panel p {
+            color: var(--text-secondary);
+            font-size: 0.86rem;
+            font-weight: 500;
+        }
+
+        .mistake-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .mistake-actions .start-btn {
+            padding: 10px 14px;
+            font-size: 0.84rem;
+        }
+
+        .mistake-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 8px;
+            max-height: 190px;
+            overflow-y: auto;
+            margin-top: 12px;
+        }
+
+        .mistake-item {
+            border: 1px solid var(--blue);
+            border-radius: 6px;
+            padding: 8px 10px;
+            font-size: 0.8rem;
+            color: var(--black);
+            line-height: 1.45;
+        }
+
+        .mistake-item.active {
+            border-color: var(--red);
+        }
+
+        .mistake-item strong {
+            display: block;
+            color: var(--blue);
+            margin-bottom: 2px;
+        }
+
+        .mistake-item.active strong,
+        .mistake-score.negative {
+            color: var(--red);
         }
 
         /* Study Screen */
@@ -609,6 +693,16 @@
             font-weight: 600;
         }
 
+        .question-mode {
+            display: inline-block;
+            color: var(--blue);
+            border: 1px solid var(--blue);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.76rem;
+            font-weight: 600;
+        }
+
         .question-text {
             font-size: 1rem;
             font-weight: 500;
@@ -747,6 +841,14 @@
         .nav-btn.primary:hover:not(:disabled) {
             background: var(--black);
             border-color: var(--black);
+        }
+
+        .nav-btn.reset-action:hover:not(:disabled),
+        .nav-btn.reset-action.danger,
+        .nav-btn.reset-action.danger:hover:not(:disabled) {
+            background: var(--red);
+            border-color: var(--red);
+            color: var(--white);
         }
 
         .nav-btn.danger {
@@ -909,12 +1011,15 @@
 
             .start-actions,
             .study-toolbar,
+            .mistake-panel-header,
+            .mistake-actions,
             .quiz-actions {
                 flex-direction: column;
             }
 
             .start-actions .start-btn,
             .study-toolbar .nav-btn,
+            .mistake-actions .start-btn,
             .quiz-actions .nav-btn {
                 width: 100%;
             }
@@ -1169,6 +1274,19 @@
                 <button class="start-btn secondary hidden" id="resumeQuizBtn">Tiếp tục bài đang làm</button>
                 <button class="start-btn" id="startBtn">Bắt đầu làm bài</button>
             </div>
+            <div class="mistake-panel hidden" id="mistakePanel">
+                <div class="mistake-panel-header">
+                    <div>
+                        <h3>Câu đã làm sai</h3>
+                        <p id="mistakeSummary">Chưa có dữ liệu câu sai.</p>
+                    </div>
+                    <div class="mistake-actions">
+                        <button class="start-btn secondary" id="practiceMistakesBtn">Luyện câu đang sai</button>
+                        <button class="start-btn secondary" id="practiceMistakeHistoryBtn">Ôn toàn bộ câu từng sai</button>
+                    </div>
+                </div>
+                <div class="mistake-list" id="mistakeList"></div>
+            </div>
             <p class="disclaimer">Nội dung chỉ mang tính chất tham khảo. Đáp án được tự chọn để phục vụ ôn tập; người học nên đối chiếu thêm với tài liệu học phần khi cần.</p>
         </div>
 
@@ -1220,12 +1338,13 @@
                     <div class="quiz-actions">
                         <button class="nav-btn" id="quizHomeBtn">Trang chủ</button>
                         <button class="nav-btn" id="quizConceptBtn">Khái niệm</button>
-                        <button class="nav-btn" id="quizResetBtn">Làm lại từ đầu</button>
-                        <button class="nav-btn primary" id="earlySubmitBtn">Nộp bài sớm</button>
+                        <button class="nav-btn reset-action" id="quizResetBtn">Làm lại từ đầu</button>
+                        <button class="nav-btn primary" id="earlySubmitBtn">Nộp bài</button>
                     </div>
                     <div class="question-card" id="questionCard">
                         <div class="question-meta">
                             <span class="question-number" id="questionNumber">Câu 1</span>
+                            <span class="question-mode" id="quizModeLabel">Làm bài ngẫu nhiên</span>
                         </div>
                         <div class="question-text" id="questionText"></div>
                         <div class="options" id="optionsContainer"></div>
@@ -1846,6 +1965,8 @@
                 this.quizSubmitted = false;
                 this.resetArmed = false;
                 this.resetConfirmTimer = null;
+                this.currentQuizMode = 'all';
+                this.mistakeStats = this.loadMistakeStats();
                 
                 this.init();
             }
@@ -1862,6 +1983,7 @@
                     this.metadata = data;
                     this.questions = data.questions;
                     this.updateStartInfo(data);
+                    this.renderMistakePanel();
                 } catch (error) {
                     console.error('Error loading questions:', error);
                 }
@@ -1889,6 +2011,8 @@
                 document.getElementById('studyQuizBtn').addEventListener('click', () => this.startOrResumeQuiz());
                 document.getElementById('backFromConceptBtn').addEventListener('click', () => this.showStartScreen());
                 document.getElementById('conceptQuizBtn').addEventListener('click', () => this.startOrResumeQuiz());
+                document.getElementById('practiceMistakesBtn').addEventListener('click', () => this.startQuiz('activeMistakes'));
+                document.getElementById('practiceMistakeHistoryBtn').addEventListener('click', () => this.startQuiz('mistakeHistory'));
                 document.getElementById('quizHomeBtn').addEventListener('click', () => this.showStartScreen());
                 document.getElementById('quizConceptBtn').addEventListener('click', () => this.openConceptMode());
                 document.getElementById('quizResetBtn').addEventListener('click', () => this.resetCurrentQuiz());
@@ -1973,6 +2097,142 @@
                 return this.questions;
             }
 
+            loadMistakeStats() {
+                try {
+                    const raw = localStorage.getItem('apc-pl-mistake-stats');
+                    if (!raw) return {};
+
+                    const parsed = JSON.parse(raw);
+                    return Object.fromEntries(Object.entries(parsed).map(([id, stat]) => [
+                        id,
+                        {
+                            wrongCount: Number(stat.wrongCount) || 0,
+                            score: Number(stat.score) || 0
+                        }
+                    ]));
+                } catch (error) {
+                    console.warn('Không thể đọc dữ liệu câu sai:', error);
+                    return {};
+                }
+            }
+
+            saveMistakeStats() {
+                try {
+                    localStorage.setItem('apc-pl-mistake-stats', JSON.stringify(this.mistakeStats));
+                } catch (error) {
+                    console.warn('Không thể lưu dữ liệu câu sai:', error);
+                }
+            }
+
+            getMistakeStat(id) {
+                const stat = this.mistakeStats[id] || { wrongCount: 0, score: 0 };
+                return {
+                    wrongCount: Number(stat.wrongCount) || 0,
+                    score: Number(stat.score) || 0
+                };
+            }
+
+            getMistakeQuestions(mode) {
+                return this.questions.filter((question) => {
+                    const stat = this.getMistakeStat(question.id);
+                    return mode === 'activeMistakes'
+                        ? stat.score < 0
+                        : stat.wrongCount > 0;
+                });
+            }
+
+            orderMistakeQuestions(questions, mode) {
+                const randomized = this.shuffleArray([...questions]);
+                return randomized.sort((a, b) => {
+                    const statA = this.getMistakeStat(a.id);
+                    const statB = this.getMistakeStat(b.id);
+
+                    if (mode === 'activeMistakes' && statA.score !== statB.score) {
+                        return statA.score - statB.score;
+                    }
+
+                    return statB.wrongCount - statA.wrongCount;
+                });
+            }
+
+            getQuizModeTitle() {
+                if (this.currentQuizMode === 'activeMistakes') return 'Luyện câu đang sai';
+                if (this.currentQuizMode === 'mistakeHistory') return 'Ôn toàn bộ câu từng sai';
+                return 'Làm bài ngẫu nhiên';
+            }
+
+            recordQuestionResult(questionId, isCorrect) {
+                const stat = this.getMistakeStat(questionId);
+
+                if (!isCorrect) {
+                    stat.wrongCount += 1;
+                    stat.score -= 1;
+                } else if (stat.wrongCount > 0 && stat.score < 0 && this.currentQuizMode !== 'mistakeHistory') {
+                    stat.score += 1;
+                }
+
+                if (stat.wrongCount > 0 || stat.score < 0) {
+                    this.mistakeStats[questionId] = stat;
+                } else {
+                    delete this.mistakeStats[questionId];
+                }
+
+                this.saveMistakeStats();
+                this.renderMistakePanel();
+            }
+
+            getMistakeSummaryData() {
+                const entries = this.questions
+                    .map(question => ({ question, stat: this.getMistakeStat(question.id) }))
+                    .filter(item => item.stat.wrongCount > 0);
+
+                const active = entries.filter(item => item.stat.score < 0);
+                const totalWrong = entries.reduce((sum, item) => sum + item.stat.wrongCount, 0);
+
+                return { entries, active, totalWrong };
+            }
+
+            renderMistakePanel() {
+                const panel = document.getElementById('mistakePanel');
+                if (!panel || !this.questions.length) return;
+
+                const { entries, active, totalWrong } = this.getMistakeSummaryData();
+                const activeButton = document.getElementById('practiceMistakesBtn');
+                const historyButton = document.getElementById('practiceMistakeHistoryBtn');
+                const list = document.getElementById('mistakeList');
+
+                panel.classList.toggle('hidden', entries.length === 0);
+                if (!entries.length) return;
+
+                document.getElementById('mistakeSummary').textContent =
+                    `${active.length} câu đang cần gỡ • ${entries.length} câu từng sai • ${totalWrong} lượt sai đã ghi nhận`;
+
+                activeButton.disabled = active.length === 0;
+                activeButton.textContent = active.length
+                    ? `Luyện câu đang sai (${active.length})`
+                    : 'Đã gỡ hết câu đang sai';
+                historyButton.disabled = entries.length === 0;
+                historyButton.textContent = `Ôn toàn bộ câu từng sai (${entries.length})`;
+
+                list.innerHTML = '';
+                entries
+                    .sort((a, b) => {
+                        if (a.stat.score !== b.stat.score) return a.stat.score - b.stat.score;
+                        return b.stat.wrongCount - a.stat.wrongCount;
+                    })
+                    .forEach(({ question, stat }) => {
+                        const item = document.createElement('div');
+                        item.className = `mistake-item ${stat.score < 0 ? 'active' : ''}`;
+                        item.innerHTML = `
+                            <strong>Câu ${question.id}</strong>
+                            Sai ${stat.wrongCount} lần
+                            <br>
+                            <span class="mistake-score ${stat.score < 0 ? 'negative' : ''}">Điểm ôn: ${stat.score}</span>
+                        `;
+                        list.appendChild(item);
+                    });
+            }
+
             hideAllScreens() {
                 document.getElementById('startScreen').classList.add('hidden');
                 document.getElementById('conceptScreen').classList.add('hidden');
@@ -2001,6 +2261,7 @@
                 this.clearResetConfirm();
                 this.hideAllScreens();
                 this.updateResumeButton();
+                this.renderMistakePanel();
                 document.getElementById('startScreen').classList.remove('hidden');
             }
 
@@ -2316,19 +2577,31 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            startQuiz() {
-                const selectedQuestions = this.getSelectedQuestions();
+            startQuiz(mode = 'all') {
+                const selectedQuestions = mode === 'all'
+                    ? this.getSelectedQuestions()
+                    : this.getMistakeQuestions(mode);
 
-                const originalQuestions = selectedQuestions.filter(question => question.source !== 'suggested');
-                const suggestedQuestions = selectedQuestions.filter(question => question.source === 'suggested');
-                this.currentQuestions = [
-                    ...this.shuffleArray([...originalQuestions]),
-                    ...this.shuffleArray([...suggestedQuestions])
-                ];
+                if (!selectedQuestions.length) {
+                    this.showStartScreen();
+                    return;
+                }
+
+                if (mode === 'all') {
+                    const originalQuestions = selectedQuestions.filter(question => question.source !== 'suggested');
+                    const suggestedQuestions = selectedQuestions.filter(question => question.source === 'suggested');
+                    this.currentQuestions = [
+                        ...this.shuffleArray([...originalQuestions]),
+                        ...this.shuffleArray([...suggestedQuestions])
+                    ];
+                } else {
+                    this.currentQuestions = this.orderMistakeQuestions(selectedQuestions, mode);
+                }
 
                 this.currentIndex = 0;
                 this.score = 0;
                 this.answers = new Array(this.currentQuestions.length).fill(null);
+                this.currentQuizMode = mode;
                 this.quizStarted = true;
                 this.quizSubmitted = false;
                 this.reviewFilter = 'all';
@@ -2387,6 +2660,9 @@
                 this.renderQuestionGrid();
 
                 document.getElementById('questionNumber').textContent = `Câu ${this.currentIndex + 1}`;
+                const stat = this.getMistakeStat(question.id);
+                const mistakeLabel = stat.wrongCount > 0 ? ` • Sai ${stat.wrongCount} lần • Điểm ${stat.score}` : '';
+                document.getElementById('quizModeLabel').textContent = `${this.getQuizModeTitle()}${mistakeLabel}`;
                 document.getElementById('questionText').textContent = question.question;
 
                 const optionsContainer = document.getElementById('optionsContainer');
@@ -2434,12 +2710,14 @@
 
             selectAnswer(key) {
                 const question = this.currentQuestions[this.currentIndex];
+                const isCorrect = key === question.answer;
                 this.answers[this.currentIndex] = key;
 
-                if (key === question.answer) {
+                if (isCorrect) {
                     this.score++;
                 }
 
+                this.recordQuestionResult(question.id, isCorrect);
                 this.displayQuestion();
             }
 
